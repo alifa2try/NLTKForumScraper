@@ -9,6 +9,19 @@ results = requests.get(forumURL)
 # Convert the forum page into a BeautifulSoup object
 soup = BeautifulSoup(results.content, 'html.parser')
 
-posts = soup.findAll('ul', class_= "lia-message-body-content")
+# Pull out the correct tag from the HTML
+posts = soup.find_all(name ='div', attrs = {'class' : 'lia-message-body-content'})
 
-print(len(posts))
+# Have only the message content and remove any HTML tags
+postsMessages = []
+for post in posts:
+    postsMessages.append(post.get_text())
+
+# Pass it through a BagofWords model
+for message in postsMessages:
+    print(message)
+
+
+
+
+
