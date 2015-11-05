@@ -1,5 +1,6 @@
 from bs4 import BeautifulSoup
 import csv
+import BagofWords
 import requests
 
 # Insert the forum link here. Gather the HTML from the forum into a requests oject. Insert
@@ -18,8 +19,13 @@ for post in posts:
     postsMessages.append(post.get_text())
 
 # Pass it through a BagofWords model
-for message in postsMessages:
-    print(message)
+for post in postsMessages:
+    post = BagofWords.removeSpecialCharacter(post)
+    post = BagofWords.removeStopWords(post)
+    print(post)
+
+print('finished')
+    
 
 
 
