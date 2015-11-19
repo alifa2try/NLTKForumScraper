@@ -1,17 +1,32 @@
-from sklearn.feature_extraction.text import CountVectorizer
+import postsGatherer
+from textblob.classifiers import NaiveBayesClassifier
+from textblob import TextBlob
+from nltk.corpus import movie_reviews
+
+negids = movie_reviews.fileids('neg')
+posids = movie_reviews.fileids('pos')
+
+forums = postsGatherer.gatherForums()
+
+trainingSet = []
+
+posts = forums[0].getPosts()
+
+i = 0
+for post in posts:
+    
+    sentiment = 'neg'
+    if(post.getRating() <= 5):
+        sentiment = 'neg'
+    else:
+        sentiment = 'pos'
+
+    trainingSet.append((post.getReview(), sentiment))
+    i = i + 1
 
 
-def vectorizeMessage(forumMessages):
-    
-    # Initialise the skit counting vector. It counts word frequencies
-    vectorizer = CountVectorizer(analyzer = "word", tokenizer = None, preprocessor = None, stop_words = None, max_features = 5000)
-    
-    forumMessagesFeatures = vectorizer.fit_transform(forumMessages)
-    
-    # Convert to a numpy array
-    forumMessagesFeatures = forumMessagesFeatures.toarray()    
-    
-    print(vectorizer.get_feature_names())
-    
-    return forumMessagesFeatures
+cl = NaiveBayesClassifier(trainingSet)
 
+print(cl.classify(posts[0].getReview()))
+print(cl.show_informative_features(5))
+print('finished')

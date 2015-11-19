@@ -6,8 +6,8 @@ from post import post
 from forum import forum
 import messageCleaner
 
-# This is the main class to be called from within the module
-def gatherPosts():
+# This is the main function to be called from within this module
+def gatherForums():
     
     forums = __instantiateForumsLists()
 
@@ -19,19 +19,21 @@ def __instantiateForumsLists():
     forums = []
 
     # Here append all of the forums
-    forums.append(__gatherDrugsCom())
+    # Drugs.com - all of the urls are to be appended to this list:
+    drugsdotcom = []
+    drugsdotcom.append('http://www.drugs.com/comments/tamoxifen/for-breast-cancer.html')
+      
+    for drugforum in drugsdotcom:
+        forums.append(__gatherDrugsCom(drugforum))
 
     return forums
 
 # Use this section to define all of the forum scrapers to be used
-def __gatherDrugsCom():
-
-    url = 'http://www.drugs.com/comments/tamoxifen/for-breast-cancer.html'
+def __gatherDrugsCom(url):
     results = requests.get(url)
     soup = BeautifulSoup(results.content, 'html.parser')
 
     rawPosts = soup.find_all(name = "div",  attrs = {'class' : 'boxList'})
-    soup.f
     posts = []
 
     # Extract the reviews and the ratings. If a post does not provide a review and a rating we will
@@ -48,7 +50,7 @@ def __gatherDrugsCom():
             print("A key value not provided")
             continue
 
-        messageCleaner.removeSpecialCharacter(review)
+        review = messageCleaner.removeSpecialCharacter(review)
 
         if(review and rating):
             forumPost = post(review, rating)
@@ -57,5 +59,3 @@ def __gatherDrugsCom():
 
     drugsComForum = forum(url, posts)
     return drugsComForum
-
-gatherPosts()

@@ -19,6 +19,7 @@ def getListofDiseasesWiki():
     return diseases 
 
 def getListofDiseases():
+    print('Starting [medicalInfoGather]: Beginning to gather list of diseases\n')
     diseases = []
     baseUrl = 'http://www.mayoclinic.org/diseases-conditions/index?letter='
 
@@ -37,9 +38,11 @@ def getListofDiseases():
             disease = messageCleaner.removeSpecialCharacter(rawDisease.get_text())    
             diseases.append(disease)
 
+    print('Completed [medicalInfoGather]: Finished gathered list of diseases\n')
     return diseases
 
 def getListofSymptoms():
+    print('Starting [medicalInfoGather]: Beginning to gather list of symptoms\n')
     symptoms = []
     baseUrl = 'http://www.healthline.com/directory/symptoms-'
 
@@ -57,7 +60,5 @@ def getListofSymptoms():
         for rawSymptom in rawSymptoms:
                 symptoms.append(rawSymptom.get_text())
 
+    print('Completed [medicalInfoGather]: Finished gathered list of symptoms\n')
     return symptoms
-
-
-getListofDiseases()

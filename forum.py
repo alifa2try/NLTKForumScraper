@@ -18,6 +18,14 @@ class forum(object):
     def getURL(self):
         return self.url 
 
+    def getAverageReview(self):
+
+        sum = 0
+        for post in self.posts:
+            sum += post.rating
+
+        average = sum / len(self.posts)
+        return average
 
 
 
