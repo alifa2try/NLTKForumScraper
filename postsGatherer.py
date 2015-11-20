@@ -22,6 +22,7 @@ def __instantiateForumsLists():
     # Drugs.com - all of the urls are to be appended to this list:
     drugsdotcom = []
     drugsdotcom.append('http://www.drugs.com/comments/tamoxifen/for-breast-cancer.html')
+    drugsdotcom.append('http://www.drugs.com/comments/naproxen/')
       
     for drugforum in drugsdotcom:
         forums.append(__gatherDrugsCom(drugforum))

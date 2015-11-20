@@ -1,6 +1,6 @@
 from bs4 import BeautifulSoup
-import messageCleaner
-import bagOfWords
+import NLTKForumScraper.messageCleaner
+import NLTKForumScraper.bagOfWords
 import csv
 import requests
 
