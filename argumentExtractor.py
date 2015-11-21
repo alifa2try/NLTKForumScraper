@@ -64,13 +64,17 @@ for forum in forums:
  # Now run through and print off the list of symptoms and diseases found relative to the drug
  # In this simple script we have taken the reviews on tamoxifen 
 
+print('-----------------------------------------------------------------------------\n')
 print('****Starting [argumentExtractor]: Printing out all of the symptoms found:****\n')
+print('-----------------------------------------------------------------------------\n')
 for symptom in symptomsFound:
     print(symptom)
-    print('\n')
+    print('\n') 
 print('Completed [argumentExtractor]: Finished printing\n')
 
+print('-----------------------------------------------------------------------------\n')
 print('****Starting [argumentExtractor]: Printing out all of the diseases found:****\n')
+print('-----------------------------------------------------------------------------\n')
 for disease in diseasesFound:
     print(disease)
     print('\n')
