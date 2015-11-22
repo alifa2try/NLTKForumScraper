@@ -2,6 +2,9 @@ from bs4 import BeautifulSoup
 import requests
 import messageCleaner
 from string import ascii_lowercase
+import logging
+
+logger = logging.getLogger(__name__)
 
 # This script pulls togethor a list of diseases and symptoms
 
@@ -19,7 +22,7 @@ def getListofDiseasesWiki():
     return diseases 
 
 def getListofDiseases():
-    print('Starting [medicalInfoGather]: Beginning to gather list of diseases\n')
+    logger.info(' Starting [getListofDiseases()]: Beginning to gather list of diseases\n')
     diseases = []
     baseUrl = 'http://www.mayoclinic.org/diseases-conditions/index?letter='
 
@@ -38,11 +41,11 @@ def getListofDiseases():
             disease = messageCleaner.removeSpecialCharacter(rawDisease.get_text())    
             diseases.append(disease)
 
-    print('Completed [medicalInfoGather]: Finished gathered list of diseases\n')
+    logger.info(' Completed [getListofDiseases()]: Finished gathered list of diseases\n')
     return diseases
 
 def getListofSymptoms():
-    print('Starting [medicalInfoGather]: Beginning to gather list of symptoms\n')
+    logger.info('Starting [getListofSymptoms()]: Beginning to gather list of symptoms\n')
     symptoms = []
     baseUrl = 'http://www.healthline.com/directory/symptoms-'
 
@@ -60,5 +63,5 @@ def getListofSymptoms():
         for rawSymptom in rawSymptoms:
                 symptoms.append(rawSymptom.get_text())
 
-    print('Completed [medicalInfoGather]: Finished gathered list of symptoms\n')
+    logger.info(' Completed [getListofSymptoms()]: Finished gathered list of symptoms\n')
     return symptoms

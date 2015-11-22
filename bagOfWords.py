@@ -40,11 +40,6 @@ for post in forums[1].getPosts():
 
 print('finished')
 
-    
-
-
-
-
 print(cl.classify(posts[0].getReview()))
 print(cl.show_informative_features(5))
 print('finished')
