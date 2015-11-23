@@ -38,7 +38,7 @@ def getListofDiseases():
         rawDiseases = rawDiseases[0].findAll(name = "li")
         
         for rawDisease in rawDiseases:
-            disease = messageCleaner.removeSpecialCharacter(rawDisease.get_text())    
+            disease = rawDisease.get_text().strip()    
             diseases.append(disease)
 
     logger.info(' Completed [getListofDiseases()]: Finished gathered list of diseases\n')

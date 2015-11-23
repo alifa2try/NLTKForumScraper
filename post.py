@@ -6,9 +6,10 @@ class post(object):
             Rating: This is the rating the user gave to the product
     """
 
-    def __init__(self, review, rating):
+    def __init__(self, review, rating, url):
         self.review = review
         self.rating = rating
+        self.url = url
         # The following properties are to be set by argument extractor
         self.symptoms = []
         self.disease = []
@@ -19,7 +20,7 @@ class post(object):
         return self.review
 
     def getRating(self):
-        return float(self.rating)
+        return self.rating
 
     def getSymptoms(self):
         return self.symptoms
@@ -29,6 +30,9 @@ class post(object):
 
     def getExperience(self):
         return self.experience
+
+    def getUrl(self):
+        return self.url
     
     def getSentiment(self):
         return self.sentiment

@@ -56,7 +56,9 @@ def __gatherDrugsCom(url):
     for rawPost in rawPosts:
 
         try:
-            review = rawPost.find(name = "div",  attrs = {'class' : 'user-comment'}).get_text()
+            review = rawPost.find(name = "div",  attrs = {'class' : 'user-comment'})
+            review = review.find(name = "span").get_text()
+
             rating = rawPost.find(name = "div",  attrs = {'class' : 'rating-score'}).get_text()
 
         except:
@@ -67,7 +69,7 @@ def __gatherDrugsCom(url):
         review = messageCleaner.removeSpecialCharacter(review)
 
         if(review and rating):
-            forumPost = post(review, rating)
+            forumPost = post(review, rating, url)
             posts.append(forumPost)
 
 
@@ -98,7 +100,7 @@ def __gatherWebMD(url):
         review = messageCleaner.removeSpecialCharacter(review)
         rating = re.findall('\d+', rating)
         if(review and rating):
-            forumPost = post(review, rating[0])
+            forumPost = post(review, rating[0], url)
             posts.append(forumPost)
 
     webMD = forum(url, posts)

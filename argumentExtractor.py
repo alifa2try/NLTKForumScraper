@@ -3,6 +3,7 @@ import medicalInfoGatherer
 import postsGatherer
 import forum
 import logging
+import displayArguments
 
 def checkForSymptomInClause(sentence, listOfSymptoms):
     
@@ -31,12 +32,15 @@ def checkForDiseaseInClause(sentence, listOfDiseases):
     3. For each of the posts we search for the presence of symptoms or diseases in the tokenised posts
 """
 
-
-
 def main():
-    logging.basicConfig(filename='nltkForumScraper.log', level = logging.DEBUG)
+    logging.basicConfig(filename='log.log', level = logging.DEBUG, format='%(asctime)s %(message)s')
     logging.getLogger("requests").setLevel(logging.WARNING)
     # Gather the posts from all of the forums and the list of necessary medical terms 
+
+    logging.info('-------------------------------------------------------')
+    logging.info('-------------Starting Argument Extractor---------------')
+    logging.info('-------------------------------------------------------')
+
     forums = postsGatherer.gatherForums()
     listOfDiseases = medicalInfoGatherer.getListofDiseases()
     listOfSymptoms = medicalInfoGatherer.getListofSymptoms()
@@ -55,6 +59,7 @@ def main():
         for post in posts:
             sentences = nltk.sent_tokenize(post.getReview())
 
+
             for sentence in sentences:
                 if(checkForSymptomInClause(sentence, listOfSymptoms)):
                     post.setSymptoms(sentence) 
@@ -67,9 +72,11 @@ def main():
 
         logging.info('Completed [argumentExtractor]: Finished searching for symptoms and diseases within the posts\n')
 
-     # Now run through and print off the list of symptoms and diseases found relative to the drug
-     # In this simple script we have taken the reviews on tamoxifen 
+    # Now run through and print off the list of symptoms and diseases found relative to the drug
+    # In this simple script we have taken the reviews on tamoxifen 
+    displayArguments.constructXML(forums)
     
+
     print('-----------------------------------------------------------------------------\n')
     print('****Starting [argumentExtractor]: Printing out all of the symptoms found:****\n')
     print('-----------------------------------------------------------------------------\n')
