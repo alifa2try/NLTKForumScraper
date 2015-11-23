@@ -13,10 +13,6 @@ def checkForSymptomInClause(sentence, listOfSymptoms):
         
     return (False, '')
 
-def checkForEmotion(sentence):
-    #TODO: Figure out mechanism to classify a sentence as an experience or not
-    return False
-
 def checkForDiseaseInClause(sentence, listOfDiseases):
 
     for disease in listOfDiseases:
@@ -24,6 +20,43 @@ def checkForDiseaseInClause(sentence, listOfDiseases):
             return (True, disease)
 
     return (False,'')
+
+def checkForEmotion(post):
+    ratingCategory = ''
+    volumeofDisSymptms = ''
+    emotion = ''
+
+    # Get the rating level
+    rating = float(post.getRating())
+    if rating <= 3:
+        ratingCategory = 'low'
+    elif rating >= 7:
+        ratingCategory = 'high'
+    else:
+        ratingCategory = 'med'
+
+    # Gauge the volume of symptoms and symptoms
+    noOfSymptoms = len(post.getSymptoms())
+    noOfDiseases = len(post.getDisease())
+  
+    if (noOfDiseases + noOfSymptoms) < 1:
+        volumeofDisSymptms = 'low'
+    elif (noOfDiseases + noOfSymptoms) == 1:
+        volumeofDisSymptms = 'med'
+    else:
+        volumeofDisSymptms = 'high'
+
+    # Primitive rules for getting the emotion
+    if (volumeofDisSymptms is 'high' and ratingCategory is 'low'):
+        emotion = 'unoptimisitic'
+    elif (volumeofDisSymptms is 'high' and ratingCategory is 'high'):
+        emotion = 'optimistic'
+    elif (volumeofDisSymptms is 'low' and ratingCategory is 'high'):
+        emotion = 'positive'
+    else:
+        emotion = 'neutral'
+
+    return emotion
 
 """The argument extraction script begins here:
 
@@ -54,7 +87,7 @@ def main():
     for forum in forums:
         posts = forum.getPosts()
 
-        logging.info('Starting [argumentExtractor]: Beginning to search for symptoms and diseases within the posts\n')
+        logging.info('Starting [argumentExtractor]: Beginning to search for symptoms and diseases within the posts')
 
         for post in posts:
             sentences = nltk.sent_tokenize(post.getReview())
@@ -71,14 +104,15 @@ def main():
                     diseasesFound.append(disease)
                     post.setDisease(disease)
 
-                if(checkForEmotion(sentence)):
-                    post.setEmotion(sentence)
+            emotion = checkForEmotion(post)
+            post.setEmotion(emotion)
 
-        logging.info('Completed [argumentExtractor]: Finished searching for symptoms and diseases within the posts\n')
+        logging.info('Completed [argumentExtractor]: Finished searching for symptoms and diseases within the posts')
 
     # Now run through and print off the list of symptoms and diseases found relative to the drug
     # In this simple script we have taken the reviews on tamoxifen 
     displayArguments.constructXML(forums)
+    logging.info('Finished [argumentExtractor]: Finished Process Succesfully')
 
 
 if __name__ == "__main__": main()

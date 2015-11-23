@@ -8,8 +8,9 @@ class forum(object):
         posts: This will hold a set of posts object
     """
 
-    def __init__(self, url, posts):
+    def __init__(self, url, maxScore, posts):
         self.url = url
+        self.maxScore = maxScore
         self.posts = posts
 
     def getPosts(self):
@@ -26,6 +27,9 @@ class forum(object):
 
         average = sum / len(self.posts)
         return average
+
+    def getmaxScore(self):
+        return maxScore
 
 
 

@@ -22,7 +22,7 @@ def getListofDiseasesWiki():
     return diseases 
 
 def getListofDiseases():
-    logger.info(' Starting [getListofDiseases()]: Beginning to gather list of diseases\n')
+    logger.info('Starting [getListofDiseases()]: Beginning to gather list of diseases')
     diseases = []
     baseUrl = 'http://www.mayoclinic.org/diseases-conditions/index?letter='
 
@@ -41,11 +41,11 @@ def getListofDiseases():
             disease = rawDisease.get_text().strip()    
             diseases.append(disease)
 
-    logger.info(' Completed [getListofDiseases()]: Finished gathered list of diseases\n')
+    logger.info('Completed [getListofDiseases()]: Finished gathered list of diseases')
     return diseases
 
 def getListofSymptoms():
-    logger.info('Starting [getListofSymptoms()]: Beginning to gather list of symptoms\n')
+    logger.info('Starting [getListofSymptoms()]: Beginning to gather list of symptoms')
     symptoms = []
     baseUrl = 'http://www.healthline.com/directory/symptoms-'
 
@@ -63,5 +63,5 @@ def getListofSymptoms():
         for rawSymptom in rawSymptoms:
                 symptoms.append(rawSymptom.get_text())
 
-    logger.info(' Completed [getListofSymptoms()]: Finished gathered list of symptoms\n')
+    logger.info('Completed [getListofSymptoms()]: Finished gathered list of symptoms')
     return symptoms

@@ -49,6 +49,7 @@ def __gatherDrugsCom(url):
 
     rawPosts = soup.find_all(name = "div",  attrs = {'class' : 'boxList'})
     posts = []
+    maxRating = 10
 
     # Extract the reviews and the ratings. If a post does not provide a review and a rating we will
     # dismiss it because it will not be useful during the learning phase
@@ -69,11 +70,10 @@ def __gatherDrugsCom(url):
         review = messageCleaner.removeSpecialCharacter(review)
 
         if(review and rating):
-            forumPost = post(review, rating, url)
+            forumPost = post(review, __scaleRatings(rating, maxRating), url)
             posts.append(forumPost)
-
-
-    drugsComForum = forum(url, posts)
+    
+    drugsComForum = forum(url, maxRating, posts)
     return drugsComForum
 
 def __gatherWebMD(url):
@@ -85,6 +85,7 @@ def __gatherWebMD(url):
 
     rawPosts = soup.find_all(name="div", attrs = {'class' : 'userPost'})
     posts = []
+    maxRating = 5
 
     for rawPost in rawPosts:
 
@@ -100,11 +101,20 @@ def __gatherWebMD(url):
         review = messageCleaner.removeSpecialCharacter(review)
         rating = re.findall('\d+', rating)
         if(review and rating):
-            forumPost = post(review, rating[0], url)
+            forumPost = post(review, __scaleRatings(rating[0], maxRating), url)
             posts.append(forumPost)
 
-    webMD = forum(url, posts)
+    webMD = forum(url, maxRating, posts)
     return webMD
+
+def __scaleRatings(rating, maxValue):
+    # We will scale all of the ratings to ten
+    rating = float(rating)
+    scaledRating = (rating / maxValue) * 10
+    return str(scaledRating)
+
+
+
 
     
 

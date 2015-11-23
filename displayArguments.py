@@ -25,7 +25,6 @@ def constructSinglePostXML(top, forumPost):
         disease = ElementTree.SubElement(diseases, 'disease')
         disease.text = forumPostDisease
     
-        
     symptoms = ElementTree.SubElement(post, 'symptoms')
     for forumPostSymptom in forumPost.getSymptoms():
         symptom = ElementTree.SubElement(symptoms, 'symptom')
@@ -33,6 +32,11 @@ def constructSinglePostXML(top, forumPost):
 
     rating = ElementTree.SubElement(post, 'rating')
     rating.text = forumPost.getRating()
+
+    sentimentAnalysis = ElementTree.SubElement(post, 'sentimentAnalysis')
+    
+    emotion = ElementTree.SubElement(sentimentAnalysis, 'emotion')
+    emotion.text = forumPost.getEmotion()
 
     return post
 
