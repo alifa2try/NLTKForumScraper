@@ -13,7 +13,7 @@ class post(object):
         # The following properties are to be set by argument extractor
         self.symptoms = []
         self.disease = []
-        self.experience = []
+        self.emotion = []
         self.sentiment = []
 
     def getReview(self):
@@ -28,8 +28,8 @@ class post(object):
     def getDisease(self):
         return self.disease
 
-    def getExperience(self):
-        return self.experience
+    def getEmotion(self):
+        return self.emotion
 
     def getUrl(self):
         return self.url
@@ -43,8 +43,8 @@ class post(object):
     def setDisease(self, disease):
         self.disease.append(disease)
 
-    def setExperience(self, experience):
-        self.experience.append(experience)
+    def setEmotion(self, emotion):
+        self.emotion.append(emotion)
 
     def setSentiment(self, sentiment):
         self.sentiment = sentiment

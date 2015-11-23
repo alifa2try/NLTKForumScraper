@@ -9,21 +9,21 @@ def checkForSymptomInClause(sentence, listOfSymptoms):
     
     for symptom in listOfSymptoms:
         if symptom.lower() in sentence.lower():
-            return True
+            return (True, symptom)
         
-    return False
+    return (False, '')
 
-def checkForExperience(sentence):
+def checkForEmotion(sentence):
     #TODO: Figure out mechanism to classify a sentence as an experience or not
     return False
 
 def checkForDiseaseInClause(sentence, listOfDiseases):
-    
+
     for disease in listOfDiseases:
         if disease.lower() in sentence.lower():
-            return True
+            return (True, disease)
 
-    return False
+    return (False,'')
 
 """The argument extraction script begins here:
 
@@ -59,39 +59,26 @@ def main():
         for post in posts:
             sentences = nltk.sent_tokenize(post.getReview())
 
-
             for sentence in sentences:
-                if(checkForSymptomInClause(sentence, listOfSymptoms)):
-                    post.setSymptoms(sentence) 
-                    symptomsFound.append(sentence)
-                if(checkForDiseaseInClause(sentence, listOfDiseases)):
-                    post.setDisease(sentence)
-                    diseasesFound.append(sentence)
-                if(checkForExperience(sentence)):
-                    post.setExperience(sentence)
+                foundSymptom , symptom = checkForSymptomInClause(sentence, listOfSymptoms)
+                # Make sure that we do not append a symptom twice.It may be the case that the post mentions a symptom twice in two or more sentences
+                if(foundSymptom and symptom not in post.getSymptoms()):
+                    symptomsFound.append(symptom)
+                    post.setSymptoms(symptom)
+
+                foundDisease , disease = checkForDiseaseInClause(sentence, listOfDiseases)
+                if(foundDisease and disease not in post.getDisease()):
+                    diseasesFound.append(disease)
+                    post.setDisease(disease)
+
+                if(checkForEmotion(sentence)):
+                    post.setEmotion(sentence)
 
         logging.info('Completed [argumentExtractor]: Finished searching for symptoms and diseases within the posts\n')
 
     # Now run through and print off the list of symptoms and diseases found relative to the drug
     # In this simple script we have taken the reviews on tamoxifen 
     displayArguments.constructXML(forums)
-    
-
-    print('-----------------------------------------------------------------------------\n')
-    print('****Starting [argumentExtractor]: Printing out all of the symptoms found:****\n')
-    print('-----------------------------------------------------------------------------\n')
-    for symptom in symptomsFound:
-        print(symptom)
-        print('\n') 
-    logging.info('Completed [argumentExtractor]: Finished printing\n')
-
-    print('-----------------------------------------------------------------------------\n')
-    print('****Starting [argumentExtractor]: Printing out all of the diseases found:****\n')
-    print('-----------------------------------------------------------------------------\n')
-    for disease in diseasesFound:
-        print(disease)
-        print('\n')
-    logging.info('Completed [argumentExtractor]: Finished printing\n')
 
 
 if __name__ == "__main__": main()

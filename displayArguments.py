@@ -19,13 +19,22 @@ def constructSinglePostXML(top, forumPost):
 
     originalMessage = ElementTree.SubElement(post, 'originalMessage')
     originalMessage.text = escape(forumPost.getReview())
+    
+    diseases = ElementTree.SubElement(post, 'diseases')
+    for forumPostDisease in forumPost.getDisease():
+        disease = ElementTree.SubElement(diseases, 'disease')
+        disease.text = forumPostDisease
+    
+        
+    symptoms = ElementTree.SubElement(post, 'symptoms')
+    for forumPostSymptom in forumPost.getSymptoms():
+        symptom = ElementTree.SubElement(symptoms, 'symptom')
+        symptom.text = forumPostSymptom
 
     rating = ElementTree.SubElement(post, 'rating')
     rating.text = forumPost.getRating()
 
     return post
-
-
 
 def constructXML(forums):
     
