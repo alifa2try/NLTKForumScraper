@@ -25,7 +25,7 @@ def main():
     negWords = 'Data/negative-words.txt'
     invWords = 'Data/inverter-words.txt'
 
-    with open(posWords) as f:
+    with open(posWords, encoding = 'utf-8') as f:
         posData = f.readlines()
   
     posList = []
@@ -33,7 +33,7 @@ def main():
         member = messageCleaner.removeSpecialCharacter(member)
         posList.append(member)
 
-    with open(negWords) as f:
+    with open(negWords, encoding = 'utf-8') as f:
         negData = f.readlines()
   
     negList = []
@@ -41,7 +41,7 @@ def main():
         member = messageCleaner.removeSpecialCharacter(member)
         negList.append(member)
 
-    with open(invWords) as f:
+    with open(invWords, encoding = 'utf-8') as f:
         invData = f.readlines()
   
     invList = []
