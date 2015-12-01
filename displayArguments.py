@@ -33,6 +33,9 @@ def constructSinglePostXML(top, forumPost):
     rating = ElementTree.SubElement(post, 'rating')
     rating.text = forumPost.getRating()
 
+    positiveWordScore = ElementTree.SubElement(post, 'positiveWordScore')
+    positiveWordScore.text = forumPost.getPositiveWordScore()
+
     sentimentAnalysis = ElementTree.SubElement(post, 'sentimentAnalysis')
     
     emotion = ElementTree.SubElement(sentimentAnalysis, 'emotion')

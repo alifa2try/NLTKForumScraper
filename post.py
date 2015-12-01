@@ -15,6 +15,7 @@ class post(object):
         self.disease = []
         self.emotion = ''
         self.sentiment = []
+        self.positiveWordScore = ''
 
     def getReview(self):
         return self.review
@@ -36,6 +37,9 @@ class post(object):
     
     def getSentiment(self):
         return self.sentiment
+
+    def getPositiveWordScore(self):
+        return self.positiveWordScore
     
     def setSymptoms(self,symptom):
         self.symptoms.append(symptom)
@@ -49,5 +53,7 @@ class post(object):
     def setSentiment(self, sentiment):
         self.sentiment = sentiment
 
+    def setPositiveWordScore(self, positiveWordScore):
+        self.positiveWordScore = positiveWordScore
 
 

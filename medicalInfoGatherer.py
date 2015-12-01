@@ -27,7 +27,7 @@ def getListofDiseases():
     logger.info('Starting [getListofDiseases()]: Beginning to gather list of diseases')
     diseases = []
     baseUrl = 'http://www.mayoclinic.org/diseases-conditions/index?letter='
-    fileName = 'listOfDiseases.csv'
+    fileName = 'Data/listOfDiseases.csv'
 
     fileExists = os.path.isfile(fileName)
 
@@ -61,7 +61,7 @@ def getListofSymptoms():
     logger.info('Starting [getListofSymptoms()]: Beginning to gather list of symptoms')
     symptoms = []
     baseUrl = 'http://www.healthline.com/directory/symptoms-'
-    fileName = 'listOfSymptoms.csv'
+    fileName = 'Data/listOfSymptoms.csv'
 
     fileExists = os.path.isfile(fileName)
 

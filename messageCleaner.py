@@ -3,11 +3,11 @@ import re
 
 # Function to remove escape characters and the like
 def removeSpecialCharacter(message):
-    #messageCleaned = message.strip()
-    " ".join(message.split())
+    messageCleaned = message.strip()
+    # " ".join(message.split())
     # TODO: Make sure to recomment this again. This was changed so we can only remove white spaces for the diseaseGatherer module
     #messageCleaned = re.sub("[^a-zA-Z]", " ", message)
-    return message
+    return messageCleaned
 
 # Function to remove stopwords from each of the messages
 def removeStopWords(message):
