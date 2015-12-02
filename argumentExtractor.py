@@ -9,20 +9,36 @@ import messageCleaner
 class argumentExtractor(object):
 
 
-    def __init__(self, listOfSymptoms, listOfDiseases, listOfInverters, listOfPosWords, listOfNegWords):
+    def __init__(self, listOfSymptoms, listOfDiseases, listOfDrugs, listOfInverters, listOfPosWords, listOfNegWords):
         self.listOfSymptoms = listOfSymptoms
         self.listOfDiseases = listOfDiseases
+        self.listOfDrugs = listOfDrugs
         self.listIfInverters = listOfInverters
         self.listOfPosWords = listOfPosWords
         self.listOfNegWords = listOfNegWords
 
+
+    def checkForDrugs(self, sentence):
+        sentenceTokenised = word_tokenize(sentence.lower())
+        drugs = []
+
+        for drug in self.listOfDrugs:
+            if drug.lower() in sentenceTokenised:
+                drugs.append(drug)
+         
+        return drugs
+
     def checkForSymptomInClause(self, sentence):
-    
+        
+        sentenceTokenised = word_tokenize(sentence)
+        symptoms = []
+        relief = []
+
         for symptom in self.listOfSymptoms:
             if symptom.lower() in sentence.lower():
-                return (True, symptom)
+                symptoms.append(symptom)
         
-        return (False, '')
+        return symptoms, relief
 
     def checkForDiseaseInClause(self, sentence):
 
@@ -75,25 +91,6 @@ class argumentExtractor(object):
         # count the number of neg words in the sentence
         # do a sum of the two: score = posCount - negCount
         sentenceTokenised = word_tokenize(sentence)
-
-        #posWords = 'Data/positive-words.txt'
-        #negWords = 'Data/negative-words.txt'
-
-        #with open(posWords) as f:
-        #    posData = f.readlines()
-  
-        #posList = []
-        #for member in posData: 
-        #    member = messageCleaner.removeSpecialCharacter(member)
-        #    posList.append(member)
-
-        #with open(negWords) as f:
-        #    negData = f.readlines()
-  
-        #negList = []
-        #for member in negData: 
-        #    member = messageCleaner.removeSpecialCharacter(member)
-        #    negList.append(member)
     
         negScore = 0
         posScore = 0
@@ -122,9 +119,11 @@ class argumentExtractor(object):
                     3. If the word does not exist at all return 0
         """
 
-        if word in list:
+        lowerCaseList = [element.lower() for element in list]
+
+        if word.lower() in lowerCaseList:
             if index > 0:
-                if sentence[index - 1] in self.listIfInverters:
+                if sentence[index - 1].lower() in self.listIfInverters:
                     return -1
                 else:
                     return 1

@@ -23,6 +23,79 @@ def getListofDiseasesWiki():
 
     return diseases 
 
+def getListofDrugs():
+    logger.info('Starting [getListofDrugs()]: Beginning to gather list of drugs')
+    drugs = []
+    baseUrl = 'http://www.drugs.com/alpha/'
+    fileName = 'Data/listOfDrugs.csv'
+
+    fileExists = os.path.isfile(fileName)
+
+    if(fileExists):
+        drugs = __getMedicalInfoListFromCSV(fileName)
+    
+    else:
+        with open(fileName, 'w') as f:
+            writer = csv.writer(f, lineterminator='\n')
+
+            for letter in ascii_lowercase:
+                pageNumbers = []
+                
+                urlandLetter = baseUrl + letter
+                url = baseUrl + letter + '1.html'
+
+                results = requests.get(url)
+                soup = BeautifulSoup(results.content, 'html.parser')
+
+                pageIndex = soup.find(name = 'td' , attrs = {'class' : 'paging-list-index'})
+                pageNumbersRaw = pageIndex.findAll(name = 'a')
+
+                try:
+                    for pageNumber in pageNumbersRaw:
+                        pageNumbers.append(int(pageNumber.get_text()))
+
+                    for pageNumber in pageNumbers:
+                        url = urlandLetter + str(pageNumber) + '.html'
+                    
+                        results = requests.get(url)
+                        soup = BeautifulSoup(results.content, 'html.parser')
+
+                        drugsListRaw = soup.findAll(name = 'ul' , attrs = {'class' : 'doc-type-list'})
+
+                        drugsRaw = drugsListRaw[0].findAll(name = 'a')
+
+                        for drugRaw in drugsRaw:
+                            drug = drugRaw.get_text().strip()
+                            try:
+                                writer.writerow([drug])
+                            except:
+                                logger.error(" Error[getListOfDrugs()] = Threw an error whilst writing to drugs.csv list")
+                                continue
+                            drugs.append(drug)
+                            f.flush()
+                except:
+                    logger.error(" Error[getListOfDrugs()] = Threw an error whilst reading off the url: " + url)
+                    results = requests.get(url)
+                    soup = BeautifulSoup(results.content, 'html.parser')
+
+                    drugsListRaw = soup.findAll(name = 'ul' , attrs = {'class' : 'doc-type-list'})
+
+                    drugsRaw = drugsListRaw[0].findAll(name = 'a')
+
+                    for drugRaw in drugsRaw:
+                        drug = drugRaw.get_text().strip()
+                        try:
+                            writer.writerow([drug])
+                        except:
+                            logger.error(" Error[getListOfDrugs()] = Threw an error whilst writing to drugs.csv list")
+                            continue
+                        drugs.append(drug)
+                        f.flush()
+
+    logger.info('Completed [getListofDrugs()]: Finished gathered list of drugs')
+    return drugs
+                    
+
 def getListofDiseases():
     logger.info('Starting [getListofDiseases()]: Beginning to gather list of diseases')
     diseases = []
@@ -109,3 +182,5 @@ def __writeMedicalInfoToCSV(fileObj, writer, rawmedicalInfoList, medicalInfoList
         fileObj.flush()
     
     return True
+
+
