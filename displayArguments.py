@@ -34,6 +34,14 @@ def constructSinglePostXML(top, forumPost):
     for forumPostDrug in forumPost.getDrugs():
         drug = ElementTree.SubElement(drugs, 'drug')
         drug.text = forumPostDrug
+    
+    symptomDrugRel = ElementTree.SubElement(post, 'medicationPerSymptom')
+    for forumPostSympDrugRel in forumPost.getSymptomDrugRelation():
+        symptom = ElementTree.SubElement(symptomDrugRel, 'symptom')
+        symptom.text = forumPostSympDrugRel[0]
+
+        drug = ElementTree.SubElement(symptom, 'drug')
+        drug.text = forumPostSympDrugRel[1]
 
     rating = ElementTree.SubElement(post, 'rating')
     rating.text = forumPost.getRating()

@@ -92,6 +92,14 @@ def main():
                         if symptomFound not in post.getSymptoms():
                             post.setSymptoms(symptomFound)
              
+                # Looking for relationships between symptoms and drugs found
+                # TODO: Move this urgently to the argExtractor class
+                if(len(symptomsFound) > 0 and len(drugsFound) > 0):
+                    for symptom in symptomsFound:
+                        # TODO: This is a naive assumption that we'll only have a few drugs mentioned. Needs to be changed
+                        symDrugRelation = [symptom, drugsFound[0]]
+                        post.setSymptomDrugRelation(symDrugRelation)
+
                 foundDisease , disease = argExtractor.checkForDiseaseInClause(sentence)
                 if(foundDisease and disease not in post.getDisease()):
                     post.setDisease(disease)
