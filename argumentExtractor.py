@@ -40,6 +40,17 @@ class argumentExtractor(object):
         
         return symptoms, relief
 
+    def checkdrugSymptomRelation(self, symptomsFound, drugsFound, sentence):
+
+        symDrugRelation = []
+
+        if(len(symptomsFound) > 0 and len(drugsFound) > 0):
+            for symptom in symptomsFound:
+                # TODO: This is a naive assumption that we'll only have a few drugs mentioned. Needs to be changed
+                symDrugRelation.append([symptom, drugsFound[0]])
+
+        return symDrugRelation
+
     def checkForDiseaseInClause(self, sentence):
 
         for disease in self.listOfDiseases:

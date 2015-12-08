@@ -7,6 +7,8 @@ from post import post
 from forum import forum
 import messageCleaner
 import logging
+from dataBaseConnector import dataBaseConnector
+import pymysql.cursors
 
 logger = logging.getLogger(__name__)
 
@@ -14,6 +16,8 @@ logger = logging.getLogger(__name__)
 def gatherForums():
     
     forums = __instantiateForumsLists()
+
+    __insertIntoDB(forums)
 
     return forums
 
@@ -52,6 +56,8 @@ def __instantiateForumsLists():
 
 # Use this section to define all of the forum scrapers to be used
 def __gatherDrugsCom(url):
+
+    forumName = 'Drugs.com'
     results = requests.get(url)
     soup = BeautifulSoup(results.content, 'html.parser')
 
@@ -81,13 +87,13 @@ def __gatherDrugsCom(url):
             forumPost = post(review, __scaleRatings(rating, maxRating), url)
             posts.append(forumPost)
     
-    drugsComForum = forum(url, maxRating, posts)
+    drugsComForum = forum(forumName , url, maxRating, posts)
     return drugsComForum
 
 def __gatherWebMD(url):
     # WebMD is problamtic in that it provides three types of ratings. To simplify the problem we will only be pulling the satisfaction rating, as this 
     # seems to be the most general one 
-
+    forumName = 'Webmd.com'
     results = requests.get(url)
     soup = BeautifulSoup(results.content, 'html.parser')
 
@@ -112,7 +118,7 @@ def __gatherWebMD(url):
             forumPost = post(review, __scaleRatings(rating[0], maxRating), url)
             posts.append(forumPost)
 
-    webMD = forum(url, maxRating, posts)
+    webMD = forum(forumName, url, maxRating, posts)
     return webMD
 
 def __scaleRatings(rating, maxValue):
@@ -120,6 +126,31 @@ def __scaleRatings(rating, maxValue):
     rating = float(rating)
     scaledRating = (rating / maxValue) * 10
     return str(scaledRating)
+
+def __insertIntoDB(forums):
+
+    dbobj = dataBaseConnector('DBConnector.ini')
+
+    for forum in forums:
+        for post in forum.getPosts():
+            message = post.getReview()
+            message = message.replace("'","\\'")
+
+            url = forum.getURL()
+            url = url.replace("'","\\'")
+            forumName = forum.getName()
+
+
+            insertSql = "INSERT INTO ForumPosts (ForumName, URL, Post) VALUES (%s, %s, %s);" % ("'"+ forumName + "'", "'"+ url + "'", "'"+ message + "'")
+
+            try:
+                dbobj.insert(insertSql)
+                logger.info("Success[gatherForums()]: successfully inserted posts into DB")
+            except:
+                logger.info("Failed[gatherForums()]: Failed to insert posts properly into DB")
+                continue
+
+
 
 
 

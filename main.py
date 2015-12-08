@@ -7,7 +7,6 @@ import displayArguments
 from argumentExtractor import argumentExtractor
 import messageCleaner
 
-
 def buildArgExtractorWithDataLists():
     logging.info('Starting [main]: Building data lists')
 
@@ -84,20 +83,16 @@ def main():
                         if drugFound.lower() not in post.getDrugs():
                             post.setDrugs(drugFound.lower())
 
-                symptomsFound , reliefsFound = argExtractor.checkForSymptomInClause(sentence)
-
                 # Make sure that we do not append a symptom twice.It may be the case that the post mentions a symptom twice in two or more sentences
+                symptomsFound , reliefsFound = argExtractor.checkForSymptomInClause(sentence)
                 if(len(symptomsFound) > 0):
                     for symptomFound in symptomsFound:
                         if symptomFound not in post.getSymptoms():
                             post.setSymptoms(symptomFound)
-             
-                # Looking for relationships between symptoms and drugs found
-                # TODO: Move this urgently to the argExtractor class
-                if(len(symptomsFound) > 0 and len(drugsFound) > 0):
-                    for symptom in symptomsFound:
-                        # TODO: This is a naive assumption that we'll only have a few drugs mentioned. Needs to be changed
-                        symDrugRelation = [symptom, drugsFound[0]]
+
+                symDrugRelations = argExtractor.checkdrugSymptomRelation(symptomsFound, drugsFound, sentence)
+                if(len(symDrugRelations) > 0):
+                    for symDrugRelation in symDrugRelations:
                         post.setSymptomDrugRelation(symDrugRelation)
 
                 foundDisease , disease = argExtractor.checkForDiseaseInClause(sentence)
