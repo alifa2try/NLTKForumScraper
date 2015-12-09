@@ -19,7 +19,10 @@ class post(object):
         self.sentiment = []
         self.symptomDrugRelation = []
         self.positiveWordScore = ''
+        self.nounPhrases = []
 
+    # All the GETS go here
+    
     def getReview(self):
         return self.review
 
@@ -53,6 +56,11 @@ class post(object):
     def getPositiveWordScore(self):
         return self.positiveWordScore
     
+    def getNounPhrases(self):
+        return self.nounPhrases
+
+    # All the SETS go here
+
     def setSymptoms(self,symptom):
         self.symptoms.append(symptom)
 
@@ -76,5 +84,8 @@ class post(object):
 
     def setPositiveWordScore(self, positiveWordScore):
         self.positiveWordScore = positiveWordScore
+
+    def setNounPhrase(self, nounPhrase):
+        self.nounPhrases.append(nounPhrase)
 
 

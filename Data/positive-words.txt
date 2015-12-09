@@ -246,6 +246,7 @@ bullish
 buoyant
 cajole
 calm
+calms
 calming
 calmness
 capability

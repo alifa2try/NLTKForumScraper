@@ -25,7 +25,10 @@ class dataBaseConnector(object):
 
 
     def insert(self, sql):
-        result = self.cursor.execute(sql)
+        try:
+            result = self.cursor.execute(sql)
+        except Exception as e:
+            print(str(e))
 
 
 

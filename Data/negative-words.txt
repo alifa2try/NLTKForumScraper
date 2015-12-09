@@ -4744,6 +4744,7 @@ worryingly
 worse
 worsen
 worsening
+worsened
 worst
 worthless
 worthlessly

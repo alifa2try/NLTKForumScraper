@@ -6,6 +6,8 @@ import logging
 import displayArguments
 from argumentExtractor import argumentExtractor
 import messageCleaner
+import naturalLanguageWhiz
+from dataBaseConnector import dataBaseConnector
 
 def buildArgExtractorWithDataLists():
     logging.info('Starting [main]: Building data lists')
@@ -59,6 +61,7 @@ def main():
     
     argExtractor = buildArgExtractorWithDataLists()
     forums = postsGatherer.gatherForums()
+    dbobj = dataBaseConnector('DBConnector.ini')
 
     # Loop through each of the forum posts and print the arguments onto the page. The arguments for and against each of the posts.
     # Some sort of extremley Naive Bayesian classifier 
@@ -75,7 +78,8 @@ def main():
 
             for sentence in sentences:
 
-                postWordScore = postWordScore + argExtractor.calculateWordScore(sentence)
+                sentenceScore = argExtractor.calculateWordScore(sentence)
+                postWordScore = postWordScore + sentenceScore
 
                 drugsFound = argExtractor.checkForDrugs(sentence)
                 if len(drugsFound) > 0:
@@ -95,6 +99,31 @@ def main():
                     for symDrugRelation in symDrugRelations:
                         post.setSymptomDrugRelation(symDrugRelation)
 
+                # TODO: Relocate these. Hacked in to test out ideas
+                nounPhrases = naturalLanguageWhiz.extractNounPhrases(sentence)
+                if(len(nounPhrases) > 0):
+                    for nounPhrase in nounPhrases:
+                        post.setNounPhrase(nounPhrase)
+                        message = (post.getReview()).replace("'","\\'")
+                        sentence = sentence.replace("'","\\'")
+
+                        insertSql = "INSERT INTO ForumPostFeatures (Post, Sentence, nounPhrase) VALUES (%s, %s, %s);" % ("'"+ message + "'", "'"+ sentence + "'", "'"+ nounPhrase.lower() + "'")
+                        dbobj.insert(insertSql)
+
+                # TODO: Move this ASAP. This checks to see if symptoms have worsened or not
+                if (sentenceScore != 0) and (len(nounPhrases) + len(symptomsFound) > 0):
+
+                    polarity = sentenceScore / abs(sentenceScore)
+                    symptomState = naturalLanguageWhiz.symptomNegWordStructureCheck(sentence, polarity, symptomsFound, argExtractor)
+                    logging.info('%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%')
+                    if(symptomState is True):
+                        logging.info('HACK: Negative and Worsened')
+                    else:
+                        logging.info('HACK: Potentially Worsened')    
+                    logging.info(symptomsFound)
+                    logging.info(sentence)
+
+                
                 foundDisease , disease = argExtractor.checkForDiseaseInClause(sentence)
                 if(foundDisease and disease not in post.getDisease()):
                     post.setDisease(disease)

@@ -108,7 +108,7 @@ class argumentExtractor(object):
 
         for i, word in enumerate(sentenceTokenised):
             score = self.__searchForMatchingToken(word, i, sentenceTokenised, self.listOfPosWords)
-
+            score = score + (self.__searchForMatchingToken(word, i, sentenceTokenised, self.listOfNegWords) * -1)
             if score < 0:
                 negScore = negScore + score
             else:
@@ -129,7 +129,6 @@ class argumentExtractor(object):
                         2. Id there is not an inveter assum that it is a positive existance and return 1
                     3. If the word does not exist at all return 0
         """
-
         lowerCaseList = [element.lower() for element in list]
 
         if word.lower() in lowerCaseList:
@@ -142,4 +141,26 @@ class argumentExtractor(object):
                 return 1
         else:
             return 0
+
+
+    def extractSentimentWords(self, sentence, polarity):
+        
+        sentimentWords = []
+        words = word_tokenize(sentence)
+
+        posList = [element.lower() for element in self.listOfPosWords]
+        negList = [element.lower() for element in self.listOfNegWords]
+
+
+        if polarity > 0:
+            for word in words:
+                if word.lower() in posList:
+                    sentimentWords.append(word)
+        else:
+            for word in words:
+                if word.lower() in negList:
+                    sentimentWords.append(word)
+
+        return sentimentWords
+            
 

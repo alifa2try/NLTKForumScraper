@@ -142,13 +142,9 @@ def __insertIntoDB(forums):
 
 
             insertSql = "INSERT INTO ForumPosts (ForumName, URL, Post) VALUES (%s, %s, %s);" % ("'"+ forumName + "'", "'"+ url + "'", "'"+ message + "'")
+            dbobj.insert(insertSql)
 
-            try:
-                dbobj.insert(insertSql)
-                logger.info("Success[gatherForums()]: successfully inserted posts into DB")
-            except:
-                logger.info("Failed[gatherForums()]: Failed to insert posts properly into DB")
-                continue
+
 
 
 
