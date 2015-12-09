@@ -8,4 +8,5 @@ Make sure that you have the following Python packages installed and that your ru
 pip3.4 install requests
 pip3.4 install nltk
 pip3.4 install beautifulsoup4
+pip3.4 install pymysql
 ```
