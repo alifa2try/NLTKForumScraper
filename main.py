@@ -93,13 +93,16 @@ def main():
                     for symptomFound in symptomsFound:
                         if symptomFound not in post.getSymptoms():
                             post.setSymptoms(symptomFound)
+                
+                foundDisease , disease = argExtractor.checkForDiseaseInClause(sentence)
+                if(foundDisease and disease not in post.getDisease()):
+                    post.setDisease(disease)
 
                 symDrugRelations = argExtractor.checkdrugSymptomRelation(symptomsFound, drugsFound, sentence)
                 if(len(symDrugRelations) > 0):
                     for symDrugRelation in symDrugRelations:
                         post.setSymptomDrugRelation(symDrugRelation)
 
-                # TODO: Relocate these. Hacked in to test out ideas
                 nounPhrases = naturalLanguageWhiz.extractNounPhrases(sentence)
                 if(len(nounPhrases) > 0):
                     for nounPhrase in nounPhrases:
@@ -109,6 +112,8 @@ def main():
 
                         insertSql = "INSERT INTO ForumPostFeatures (Post, Sentence, nounPhrase) VALUES (%s, %s, %s);" % ("'"+ message + "'", "'"+ sentence + "'", "'"+ nounPhrase.lower() + "'")
                         dbobj.insert(insertSql)
+                
+                naturalLanguageWhiz.extractConnectingVerbs(sentence, symptomsFound, drugsFound, dbobj)
 
                 # TODO: Move this ASAP. This checks to see if symptoms have worsened or not
                 if (sentenceScore != 0) and (len(nounPhrases) + len(symptomsFound) > 0):
@@ -117,16 +122,14 @@ def main():
                     symptomState = naturalLanguageWhiz.symptomNegWordStructureCheck(sentence, polarity, symptomsFound, argExtractor)
                     logging.info('%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%')
                     if(symptomState is True):
-                        logging.info('HACK: Negative and Worsened')
+                        logging.info('HACK: Symptom Persists/ Worsening : Presence of negative verb + Symptoms')
                     else:
-                        logging.info('HACK: Potentially Worsened')    
+                        logging.info('HACK: Possibly Worsened Symptom: Presence of Symptom but no verb found')    
                     logging.info(symptomsFound)
                     logging.info(sentence)
 
                 
-                foundDisease , disease = argExtractor.checkForDiseaseInClause(sentence)
-                if(foundDisease and disease not in post.getDisease()):
-                    post.setDisease(disease)
+
 
             post.setPositiveWordScore(str(postWordScore))
             emotion = argExtractor.checkForEmotion(post)

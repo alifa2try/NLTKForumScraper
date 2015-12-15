@@ -37,7 +37,7 @@ def extractNounPhrases(sentence):
 
     return nounPhrases
 
-def tag(sentence):
+def __tag(sentence):
 
     try:
         tokenizer = PunktSentenceTokenizer(sentence)
@@ -57,7 +57,7 @@ def tag(sentence):
 def symptomNegWordStructureCheck(sentence, polarity, symptoms, argExtractor):
 
     sentimentWords = argExtractor.extractSentimentWords(sentence, polarity)
-    taggedSentence = tag(sentence)
+    taggedSentence = __tag(sentence)
     sentiWordisVerbType = False
 
     for sentimentWord in sentimentWords:
@@ -74,6 +74,51 @@ def symptomNegWordStructureCheck(sentence, polarity, symptoms, argExtractor):
                         break
     
     return sentiWordisVerbType
+
+def extractConnectingVerbs(sentence, symptoms, drugs, dbobj):
+
+    if len(symptoms) <= 0 or len(drugs) <= 0:
+        return
+
+    taggedSentence = __tag(sentence)
+    symptomPos = 0
+    symptom = ''
+    drug = ''
+    drugPos = 0
+    connectingVerbs = []
+    drugFirst = 'Y'
+
+    for idx, posTag in enumerate(taggedSentence):
+        print(idx)
+        if posTag[0].lower() in symptoms:
+            symptomPos = idx
+            symptom = posTag[0]
+            continue
+        if posTag[0].lower() in drugs:
+            drugPos = idx
+            drug = posTag[0]
+            continue
+        if ((symptom != '') or (drug != '')):
+            if 'VB' in posTag[1]:
+                connectingVerbs.append(posTag[0])
+                continue
+        if ((symptom != '') and (drug != '') and (len(connectingVerbs) > 0)):
+            break
+    
+    if drugPos < symptomPos:
+        drugFirst = 'Y'
+    else:
+        drugFirst = 'N'
+
+    sentence = (sentence.replace("'","\\'"))
+    connectingVerbStr = ",".join(connectingVerbs)
+
+    insertSql = "INSERT INTO SentenceDetails (Sentence, ConnectingVerb, Symptoms, Drugs, DrugsFirst) VALUES (%s, %s, %s, %s, %s);" % ("'"+ sentence + "'", "'"+ connectingVerbStr + "'", "'"+ symptom + "'", "'"+ drug + "'", "'"+ drugFirst + "'")
+    dbobj.insert(insertSql)
+    
+
+
+
 
 
 

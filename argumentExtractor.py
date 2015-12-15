@@ -24,7 +24,7 @@ class argumentExtractor(object):
 
         for drug in self.listOfDrugs:
             if drug.lower() in sentenceTokenised:
-                drugs.append(drug)
+                drugs.append(drug.lower())
          
         return drugs
 
@@ -36,7 +36,7 @@ class argumentExtractor(object):
 
         for symptom in self.listOfSymptoms:
             if symptom.lower() in sentence.lower():
-                symptoms.append(symptom)
+                symptoms.append(symptom.lower())
         
         return symptoms, relief
 
