@@ -46,8 +46,6 @@ def __tag(sentence):
         words = nltk.word_tokenize(tokenized[0])
         tagged = nltk.pos_tag(words)
 
-        print(tagged)
-
         return tagged
 
     except Exception as e:
@@ -89,7 +87,6 @@ def extractConnectingVerbs(sentence, symptoms, drugs, dbobj):
     drugFirst = 'Y'
 
     for idx, posTag in enumerate(taggedSentence):
-        print(idx)
         if posTag[0].lower() in symptoms:
             symptomPos = idx
             symptom = posTag[0]
@@ -103,18 +100,21 @@ def extractConnectingVerbs(sentence, symptoms, drugs, dbobj):
                 connectingVerbs.append(posTag[0])
                 continue
         if ((symptom != '') and (drug != '') and (len(connectingVerbs) > 0)):
+            
+            if drugPos < symptomPos:
+                drugFirst = 'Y'
+            else:
+                drugFirst = 'N'
+
+            sentence = (sentence.replace("'","\\'"))
+            connectingVerbStr = ",".join(connectingVerbs)
+
+            insertSql = "INSERT INTO SentenceDetails (Sentence, ConnectingVerb, Symptoms, Drugs, DrugsFirst) VALUES (%s, %s, %s, %s, %s);" % ("'"+ sentence + "'", "'"+ connectingVerbStr + "'", "'"+ symptom + "'", "'"+ drug + "'", "'"+ drugFirst + "'")
+            dbobj.insert(insertSql)
+
             break
     
-    if drugPos < symptomPos:
-        drugFirst = 'Y'
-    else:
-        drugFirst = 'N'
 
-    sentence = (sentence.replace("'","\\'"))
-    connectingVerbStr = ",".join(connectingVerbs)
-
-    insertSql = "INSERT INTO SentenceDetails (Sentence, ConnectingVerb, Symptoms, Drugs, DrugsFirst) VALUES (%s, %s, %s, %s, %s);" % ("'"+ sentence + "'", "'"+ connectingVerbStr + "'", "'"+ symptom + "'", "'"+ drug + "'", "'"+ drugFirst + "'")
-    dbobj.insert(insertSql)
     
 
 
