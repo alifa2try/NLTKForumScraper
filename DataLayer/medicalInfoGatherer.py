@@ -1,6 +1,6 @@
 from bs4 import BeautifulSoup
 import requests
-import messageCleaner
+from Utilities import messageCleaner
 from string import ascii_lowercase
 import logging
 import csv

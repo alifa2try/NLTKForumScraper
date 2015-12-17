@@ -3,11 +3,11 @@
 from bs4 import BeautifulSoup
 import requests
 import re
-from post import post
-from forum import forum
-import messageCleaner
+from DataLayer.post import post
+from DataLayer.forum import forum
+from Utilities import messageCleaner
 import logging
-from dataBaseConnector import dataBaseConnector
+from DataLayer.dataBaseConnector import dataBaseConnector
 import pymysql.cursors
 
 logger = logging.getLogger(__name__)

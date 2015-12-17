@@ -1,8 +1,8 @@
 from xml.etree import ElementTree
 from xml.dom import minidom
 from xml.sax.saxutils import escape
-import forum
-import post
+from DataLayer import forum
+from DataLayer import post
 
 def prettify(elem):
     #Return a pretty-printed XML string for the Element

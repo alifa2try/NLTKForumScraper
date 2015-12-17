@@ -1,5 +1,5 @@
-import messageCleaner
-import postsGatherer
+from Utilities import messageCleaner
+from DataLayer import postsGatherer
 from textblob.classifiers import NaiveBayesClassifier
 from textblob import TextBlob
 from nltk.corpus import movie_reviews

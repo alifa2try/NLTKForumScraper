@@ -1,10 +1,10 @@
 from nltk.tokenize import word_tokenize
-import medicalInfoGatherer
-import postsGatherer
-import forum
+from DataLayer import medicalInfoGatherer
+from DataLayer import postsGatherer
+from DataLayer import forum
 import logging
-import displayArguments
-import messageCleaner
+from ViewLayer import displayArguments
+from Utilities import messageCleaner
 
 class argumentExtractor(object):
 

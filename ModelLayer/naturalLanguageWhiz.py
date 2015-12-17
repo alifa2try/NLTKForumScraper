@@ -1,7 +1,7 @@
 import nltk
 from nltk.tokenize import word_tokenize
 from nltk.tokenize import PunktSentenceTokenizer
-from argumentExtractor import argumentExtractor
+from ModelLayer.argumentExtractor import argumentExtractor 
 
 def extractNounPhrases(sentence):
 
@@ -106,11 +106,12 @@ def extractConnectingVerbs(sentence, symptoms, drugs, dbobj):
             else:
                 drugFirst = 'N'
 
-            sentence = (sentence.replace("'","\\'"))
-            connectingVerbStr = ",".join(connectingVerbs)
+            for verb in connectingVerbs:
 
-            insertSql = "INSERT INTO SentenceDetails (Sentence, ConnectingVerb, Symptoms, Drugs, DrugsFirst) VALUES (%s, %s, %s, %s, %s);" % ("'"+ sentence + "'", "'"+ connectingVerbStr + "'", "'"+ symptom + "'", "'"+ drug + "'", "'"+ drugFirst + "'")
-            dbobj.insert(insertSql)
+                sentence = (sentence.replace("'","\\'"))
+
+                insertSql = "INSERT INTO SentenceDetails (Sentence, ConnectingVerb, Symptoms, Drugs, DrugsFirst) VALUES (%s, %s, %s, %s, %s);" % ("'"+ sentence + "'", "'"+ verb + "'", "'"+ symptom + "'", "'"+ drug + "'", "'"+ drugFirst + "'")
+                dbobj.insert(insertSql)
 
             break
     

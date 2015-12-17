@@ -1,13 +1,13 @@
 import nltk  
-import medicalInfoGatherer
-import postsGatherer
-import forum
+from DataLayer import medicalInfoGatherer
+from DataLayer import postsGatherer
+from DataLayer import forum
 import logging
-import displayArguments
-from argumentExtractor import argumentExtractor
-import messageCleaner
-import naturalLanguageWhiz
-from dataBaseConnector import dataBaseConnector
+from ViewLayer import displayArguments
+from ModelLayer.argumentExtractor import argumentExtractor
+from Utilities import messageCleaner
+from ModelLayer import naturalLanguageWhiz
+from DataLayer.dataBaseConnector import dataBaseConnector
 
 def buildArgExtractorWithDataLists():
     logging.info('Starting [main]: Building data lists')
