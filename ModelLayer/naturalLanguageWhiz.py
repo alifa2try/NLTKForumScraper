@@ -110,13 +110,42 @@ def extractConnectingVerbs(sentence, symptoms, drugs, dbobj):
 
                 sentence = (sentence.replace("'","\\'"))
 
-                insertSql = "INSERT INTO SentenceDetails (Sentence, ConnectingVerb, Symptoms, Drugs, DrugsFirst) VALUES (%s, %s, %s, %s, %s);" % ("'"+ sentence + "'", "'"+ verb + "'", "'"+ symptom + "'", "'"+ drug + "'", "'"+ drugFirst + "'")
+                insertSql = "INSERT INTO ConnectingVerbs (Sentence, ConnectingVerb, Symptoms, Drugs, DrugsFirst) VALUES (%s, %s, %s, %s, %s);" % ("'"+ sentence + "'", "'"+ verb + "'", "'"+ symptom + "'", "'"+ drug + "'", "'"+ drugFirst + "'")
                 dbobj.insert(insertSql)
 
             break
     
 
-    
+def checkForMentionOfNoSymptoms(sentence, symptoms, drugs, dobj):
+
+    symtomStatements = ['side-effects', 'side effects', 'symptoms', 'symptom']
+    argExtractor = argumentExtractor()
+    taggedSentence = __tag(sentence)
+    symptomMentioned = ''
+
+    for idx, word in enumerate(taggedSentence):
+            inverterScore = argExtractor.getInverterScore(word, idx, sentence, symtomStatements)
+            # If inverterScore == 0 it means we have not match
+            # If inveterScore == 1 it means we have a match. This could mean we have a sie effect or symptom
+            # If inverterScore == -1 it means we have an inverter word. This could mean we don't have a side effect or symptom
+            if inverterScore != 0:
+                return
+            if inverterScore == -1:
+                symptomMentioned = 'No side Effects'
+                break
+            if inverterScore == 1:
+                symptomMentioned = 'Side effects present'
+                break
+
+    if symptomMentioned != '':
+        sentence = (sentence.replace("'","\\'"))
+
+        insertSql = "INSERT INTO SideEffectsPresent (Sentence, SideEffectsStatus, Drug) VALUES (%s, %s, %s);" % ("'"+ sentence + "'", "'"+ symptomMentioned + "'", "'" + '' + "'")
+        dobj.insert(insertSql)
+
+
+
+
 
 
 

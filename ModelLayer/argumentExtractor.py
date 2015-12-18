@@ -107,8 +107,8 @@ class argumentExtractor(object):
         posScore = 0
 
         for i, word in enumerate(sentenceTokenised):
-            score = self.__searchForMatchingToken(word, i, sentenceTokenised, self.listOfPosWords)
-            score = score + (self.__searchForMatchingToken(word, i, sentenceTokenised, self.listOfNegWords) * -1)
+            score = self.getInverterScore(word, i, sentenceTokenised, self.listOfPosWords)
+            score = score + (self.getInverterScore(word, i, sentenceTokenised, self.listOfNegWords) * -1)
             if score < 0:
                 negScore = negScore + score
             else:
@@ -118,7 +118,7 @@ class argumentExtractor(object):
 
         return totalScore
 
-    def __searchForMatchingToken(self, word, index, sentence, list):
+    def getInverterScore(self, word, index, sentence, list):
 
         """This method will search for inverters like 'not', 'no' etc. 
             It works as follows:
