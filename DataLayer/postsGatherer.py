@@ -48,6 +48,18 @@ def __instantiateForumsLists():
     webmd.append('http://www.webmd.com/drugs/drugreview-4497-tamoxifen+oral.aspx?drugid=4497&drugname=tamoxifen+oral&pageIndex=8&sortby=3&conditionFilter=-500')
     webmd.append('http://www.webmd.com/drugs/drugreview-4497-tamoxifen+oral.aspx?drugid=4497&drugname=tamoxifen+oral&pageIndex=9&sortby=3&conditionFilter=-500')
     webmd.append('http://www.webmd.com/drugs/drugreview-4497-tamoxifen+oral.aspx?drugid=4497&drugname=tamoxifen+oral&pageIndex=10&sortby=3&conditionFilter=-500')
+    webmd.append('http://www.webmd.com/drugs/drugreview-4497-tamoxifen+oral.aspx?drugid=4497&drugname=tamoxifen+oral&pageIndex=11&sortby=3&conditionFilter=-500')
+    webmd.append('http://www.webmd.com/drugs/drugreview-4497-tamoxifen+oral.aspx?drugid=4497&drugname=tamoxifen+oral&pageIndex=12&sortby=3&conditionFilter=-500')
+    webmd.append('http://www.webmd.com/drugs/drugreview-4497-tamoxifen+oral.aspx?drugid=4497&drugname=tamoxifen+oral&pageIndex=13&sortby=3&conditionFilter=-500')
+    webmd.append('http://www.webmd.com/drugs/drugreview-4497-tamoxifen+oral.aspx?drugid=4497&drugname=tamoxifen+oral&pageIndex=14&sortby=3&conditionFilter=-500')
+    webmd.append('http://www.webmd.com/drugs/drugreview-4497-tamoxifen+oral.aspx?drugid=4497&drugname=tamoxifen+oral&pageIndex=15&sortby=3&conditionFilter=-500')
+    webmd.append('http://www.webmd.com/drugs/drugreview-4497-tamoxifen+oral.aspx?drugid=4497&drugname=tamoxifen+oral&pageIndex=16&sortby=3&conditionFilter=-500')
+    webmd.append('http://www.webmd.com/drugs/drugreview-4497-tamoxifen+oral.aspx?drugid=4497&drugname=tamoxifen+oral&pageIndex=17&sortby=3&conditionFilter=-500')
+    webmd.append('http://www.webmd.com/drugs/drugreview-4497-tamoxifen+oral.aspx?drugid=4497&drugname=tamoxifen+oral&pageIndex=18&sortby=3&conditionFilter=-500')
+    webmd.append('http://www.webmd.com/drugs/drugreview-4497-tamoxifen+oral.aspx?drugid=4497&drugname=tamoxifen+oral&pageIndex=19&sortby=3&conditionFilter=-500')
+    webmd.append('http://www.webmd.com/drugs/drugreview-4497-tamoxifen+oral.aspx?drugid=4497&drugname=tamoxifen+oral&pageIndex=20&sortby=3&conditionFilter=-500')
+    webmd.append('http://www.webmd.com/drugs/drugreview-4497-tamoxifen+oral.aspx?drugid=4497&drugname=tamoxifen+oral&pageIndex=21&sortby=3&conditionFilter=-500')
+    webmd.append('http://www.webmd.com/drugs/drugreview-4497-tamoxifen+oral.aspx?drugid=4497&drugname=tamoxifen+oral&pageIndex=22&sortby=3&conditionFilter=-500')
     
     for forum in webmd:
         forums.append(__gatherWebMD(forum))

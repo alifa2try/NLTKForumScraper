@@ -113,7 +113,7 @@ def main():
                         insertSql = "INSERT INTO ForumPostFeatures (Post, Sentence, nounPhrase) VALUES (%s, %s, %s);" % ("'"+ message + "'", "'"+ sentence + "'", "'"+ nounPhrase.lower() + "'")
                         dbobj.insert(insertSql)
                 
-                naturalLanguageWhiz.extractConnectingVerbs(sentence, symptomsFound, drugsFound, dbobj)
+                naturalLanguageWhiz.extractConnectingVerbs(sentence.lower(), symptomsFound, drugsFound, dbobj)
 
                 # TODO: Move this ASAP. This checks to see if symptoms have worsened or not
                 if (sentenceScore != 0) and (len(nounPhrases) + len(symptomsFound) > 0):
