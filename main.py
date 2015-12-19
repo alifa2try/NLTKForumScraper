@@ -7,6 +7,7 @@ from ViewLayer import displayArguments
 from ModelLayer.argumentExtractor import argumentExtractor
 from Utilities import messageCleaner
 from ModelLayer import naturalLanguageWhiz
+from ModelLayer import sideEffectsLevelExtractor
 from DataLayer.dataBaseConnector import dataBaseConnector
 
 def buildArgExtractorWithDataLists():
@@ -114,6 +115,7 @@ def main():
                         dbobj.insert(insertSql)
                 
                 naturalLanguageWhiz.extractConnectingVerbs(sentence.lower(), symptomsFound, drugsFound, dbobj)
+                sideEffectsLevelExtractor.checkForMentionOfNoSymptoms(sentence.lower(), symptomsFound, drugsFound, argExtractor, dbobj)
 
                 # TODO: Move this ASAP. This checks to see if symptoms have worsened or not
                 if (sentenceScore != 0) and (len(nounPhrases) + len(symptomsFound) > 0):

@@ -141,6 +141,24 @@ class argumentExtractor(object):
                 return 1
         else:
             return 0
+    
+    def checkIfInverterWordEndOfSentence(self, sentence):
+
+        ''' This method checks to see if the last word in the sentence is an inverter word. This is useful if you want to 
+            see if you have an inverter word before a keyword. In order to use this function you need to strip the sentence
+            preceeding your keyword and then pass the stipped sentence into here. The sentence needs to then be POS tagged, so 
+            we can interate over the words
+        '''
+        # TODO: Note that we will not catch noun phrases like lack of in the preceeding sentences
+
+        lowerCaseList = [element.lower() for element in self.listIfInverters]
+        lastWordInSentence = sentence[-1]
+
+        for word in lowerCaseList:
+            if lastWordInSentence[0] == word:
+                return True
+        
+        return False
 
 
     def extractSentimentWords(self, sentence, polarity):
