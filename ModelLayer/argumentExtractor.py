@@ -161,6 +161,19 @@ class argumentExtractor(object):
         return False
 
 
+    def checkIfInverterWordInSentence(self, sentence):
+
+        lowerCaseList = [element.lower() for element in self.listIfInverters]
+
+        for word in sentence:
+            for inverter in lowerCaseList:
+                if inverter == word[0]:
+                    return True
+        
+        return False
+
+
+
     def extractSentimentWords(self, sentence, polarity):
         
         sentimentWords = []

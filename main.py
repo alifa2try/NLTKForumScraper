@@ -115,7 +115,9 @@ def main():
                         dbobj.insert(insertSql)
                 
                 naturalLanguageWhiz.extractConnectingVerbs(sentence.lower(), symptomsFound, drugsFound, dbobj)
-                sideEffectsLevelExtractor.checkForMentionOfNoSymptoms(sentence.lower(), symptomsFound, drugsFound, argExtractor, dbobj)
+                sideEffectsLevelExtractor.checkForMentionOfNoSymptoms(sentence.lower(), argExtractor, dbobj)
+                sideEffectsLevelExtractor.checkForNegativeWordInProceedgingSentence(sentence.lower(), argExtractor, dbobj)
+
 
                 # TODO: Move this ASAP. This checks to see if symptoms have worsened or not
                 if (sentenceScore != 0) and (len(nounPhrases) + len(symptomsFound) > 0):
