@@ -59,6 +59,9 @@ def symptomNegWordStructureCheck(sentence, polarity, symptoms, argExtractor):
 
     sentimentWords = argExtractor.extractSentimentWords(sentence, polarity)
     taggedSentence = tag(sentence)
+    if taggedSentence is None:
+        return False
+
     sentiWordisVerbType = False
 
     for sentimentWord in sentimentWords:
@@ -83,12 +86,16 @@ def extractConnectingVerbs(sentence, symptoms, drugs, dbobj):
         return
 
     taggedSentence = tag(sentence)
+    if taggedSentence is None:
+        return
+
     symptomIndex = 0
     drugIndex = 0
     symptomFound = ''
     drugFound = ''
     connectingVerbs = []
     drugFirst = 'Y'
+
 
     for symptom in symptoms:
         symptomFound = symptom

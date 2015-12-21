@@ -13,7 +13,7 @@ class argumentExtractor(object):
         self.listOfSymptoms = listOfSymptoms
         self.listOfDiseases = listOfDiseases
         self.listOfDrugs = listOfDrugs
-        self.listIfInverters = listOfInverters
+        self.listOfInverters = listOfInverters
         self.listOfPosWords = listOfPosWords
         self.listOfNegWords = listOfNegWords
         self.listOfContractions = listOfContractions
@@ -122,7 +122,9 @@ class argumentExtractor(object):
         # count the number of neg words in the sentence
         # do a sum of the two: score = posCount - negCount
         sentenceTokenised = word_tokenize(sentence)
-    
+        if sentenceTokenised is None:
+            return 0
+
         negScore = 0
         posScore = 0
 
@@ -153,7 +155,7 @@ class argumentExtractor(object):
 
         if word.lower() in lowerCaseList:
             if index > 0:
-                if sentence[index - 1].lower() in self.listIfInverters:
+                if sentence[index - 1].lower() in self.listOfInverters:
                     return -1
                 else:
                     return 1
@@ -171,7 +173,7 @@ class argumentExtractor(object):
         '''
         # TODO: Note that we will not catch noun phrases like lack of in the preceeding sentences
 
-        lowerCaseList = [element.lower() for element in self.listIfInverters]
+        lowerCaseList = [element.lower() for element in self.listOfInverters]
         lastWordInSentence = sentence[-1]
 
         for word in lowerCaseList:
@@ -183,7 +185,7 @@ class argumentExtractor(object):
 
     def checkIfInverterWordInSentence(self, sentence):
 
-        lowerCaseList = [element.lower() for element in self.listIfInverters]
+        lowerCaseList = [element.lower() for element in self.listOfInverters]
 
         for word in sentence:
             for inverter in lowerCaseList:

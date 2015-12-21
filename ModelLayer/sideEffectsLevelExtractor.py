@@ -69,10 +69,10 @@ def checkForMentionOfNoSymptoms(sentence, argExtractor):
     try:
         taggedSentence = naturalLanguageWhiz.tag(preceedingSentence)
         if len(taggedSentence) <= 0:
-            return
+            return (False, symptomMentioned)
     except:
         logger.exception('Error when running checkForMentionOfNoSymptoms')
-        return
+        return (False, symptomMentioned)
 
     result = argExtractor.checkIfInverterWordEndOfSentence(taggedSentence)
 
@@ -117,10 +117,10 @@ def checkForInverterWordInPreceedingSentence(sentence, argExtractor):
     try:
         taggedSentence = naturalLanguageWhiz.tag(preceedingSentence)
         if len(taggedSentence) <= 0:
-            return
+            return (False, sideEffectStatus)
     except:
         logger.exception('Error when running checkForMentionOfNoSymptoms')
-        return
+        return (False, sideEffectStatus)
 
     result = argExtractor.checkIfInverterWordInSentence(taggedSentence)
 
@@ -175,6 +175,7 @@ def insertIntoDB(sentence, category, dbobj):
 
     insertSql = "INSERT INTO SideEffectsPresent (Sentence, SideEffectsStatus, Drug) VALUES (%s, %s, %s);" % ("'"+ sqlSentence + "'", "'"+ category + "'", "'" + '' + "'")
     dbobj.insert(insertSql)
+
 
 
 
