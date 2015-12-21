@@ -45,7 +45,8 @@ def main():
     argExtractor = buildArgExtractorWithDataLists()
     forums = postsGatherer.gatherForums()
     dbobj = dataBaseConnector('DBConnector.ini')
-    postCount, forumCount = 0
+    postCount = 0
+    forumCount = 0
     # Loop through each of the forum posts and print the arguments onto the page. The arguments for and against each of the posts.
     # Some sort of extremley Naive Bayesian classifier 
 
@@ -128,7 +129,7 @@ def main():
     # Now run through and print off the list of symptoms and diseases found relative to the drug
     # In this simple script we have taken the reviews on tamoxifen 
     displayArguments.constructXML(forums)
-    loggin.info('End of [main]: Processed: ' + postCount + ' posts')
+    logging.info('End of [main]: Processed: ' + str(postCount) + ' posts')
     logging.info('Finished [main]: Finished Process Succesfully')
 
 

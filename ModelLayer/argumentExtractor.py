@@ -19,7 +19,7 @@ class argumentExtractor(object):
         self.listOfContractions = listOfContractions
 
 
-    def getListOfSypmtoms(self):
+    def getListOfSymptoms(self):
         return self.listOfSymptoms
 
     def getListOfDiseases(self):
