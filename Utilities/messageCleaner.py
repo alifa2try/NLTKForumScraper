@@ -25,3 +25,12 @@ def removeStopWords(message):
 
     return(" ".join(meaningfulWords))
 
+def replaceWordContractions(sentence, listOfContractions):
+
+    for (contractionKey, contractionValue) in listOfContractions.items():
+        if contractionKey in sentence:
+            sentence = sentence.replace(contractionKey, contractionValue)
+
+    return sentence
+
+

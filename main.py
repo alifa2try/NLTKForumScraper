@@ -9,6 +9,7 @@ from Utilities import messageCleaner
 from ModelLayer import naturalLanguageWhiz
 from ModelLayer import sideEffectsLevelExtractor
 from DataLayer.dataBaseConnector import dataBaseConnector
+from DataLayer import additionalDataGatherer
 
 def buildArgExtractorWithDataLists():
     logging.info('Starting [main]: Building data lists')
@@ -21,33 +22,14 @@ def buildArgExtractorWithDataLists():
     negWords = 'Data/negative-words.txt'
     invWords = 'Data/inverter-words.txt'
 
-    with open(posWords, encoding = 'utf-8', errors = 'ignore') as f:
-        posData = f.readlines()
-  
-    posList = []
-    for member in posData: 
-        member = messageCleaner.removeSpecialCharacter(member)
-        posList.append(member)
-
-    with open(negWords, encoding = 'utf-8', errors = 'ignore') as f:
-        negData = f.readlines()
-  
-    negList = []
-    for member in negData: 
-        member = messageCleaner.removeSpecialCharacter(member)
-        negList.append(member)
-
-    with open(invWords, encoding = 'utf-8', errors = 'ignore') as f:
-        invData = f.readlines()
-  
-    invList = []
-    for member in invData: 
-        member = messageCleaner.removeSpecialCharacter(member)
-        invList.append(member)
+    posList = additionalDataGatherer.getListOfFromCSV(posWords)
+    negList = additionalDataGatherer.getListOfFromCSV(negWords)
+    invList = additionalDataGatherer.getListOfFromCSV(invWords)
+    contractionsList = additionalDataGatherer.getListOfContractions()
 
     logging.info('Finished [main]: Finished building data lists')
     
-    argExtractor = argumentExtractor(listOfSymptoms, listOfDiseases, listOfDrugs, invList, posList, negList)
+    argExtractor = argumentExtractor(listOfSymptoms, listOfDiseases, listOfDrugs, invList, posList, negList, contractionsList)
 
     return argExtractor
 
@@ -109,14 +91,14 @@ def main():
                     for nounPhrase in nounPhrases:
                         post.setNounPhrase(nounPhrase)
                         message = (post.getReview()).replace("'","\\'")
-                        sentence = sentence.replace("'","\\'")
+                        sqlSentence = sentence.replace("'","\\'")
 
-                        insertSql = "INSERT INTO ForumPostFeatures (Post, Sentence, nounPhrase) VALUES (%s, %s, %s);" % ("'"+ message + "'", "'"+ sentence + "'", "'"+ nounPhrase.lower() + "'")
+                        insertSql = "INSERT INTO ForumPostFeatures (Post, Sentence, nounPhrase) VALUES (%s, %s, %s);" % ("'"+ message + "'", "'"+ sqlSentence + "'", "'"+ nounPhrase.lower() + "'")
                         dbobj.insert(insertSql)
                 
                 naturalLanguageWhiz.extractConnectingVerbs(sentence.lower(), symptomsFound, drugsFound, dbobj)
                 sideEffectsLevelExtractor.checkForMentionOfNoSymptoms(sentence.lower(), argExtractor, dbobj)
-                sideEffectsLevelExtractor.checkForNegativeWordInProceedgingSentence(sentence.lower(), argExtractor, dbobj)
+                sideEffectsLevelExtractor.checkForInverterWordInPreceedingSentence(sentence.lower(), argExtractor, dbobj)
 
 
                 # TODO: Move this ASAP. This checks to see if symptoms have worsened or not

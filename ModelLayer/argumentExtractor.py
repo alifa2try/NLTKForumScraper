@@ -9,13 +9,33 @@ from Utilities import messageCleaner
 class argumentExtractor(object):
 
 
-    def __init__(self, listOfSymptoms, listOfDiseases, listOfDrugs, listOfInverters, listOfPosWords, listOfNegWords):
+    def __init__(self, listOfSymptoms, listOfDiseases, listOfDrugs, listOfInverters, listOfPosWords, listOfNegWords, listOfContractions):
         self.listOfSymptoms = listOfSymptoms
         self.listOfDiseases = listOfDiseases
         self.listOfDrugs = listOfDrugs
         self.listIfInverters = listOfInverters
         self.listOfPosWords = listOfPosWords
         self.listOfNegWords = listOfNegWords
+        self.listOfContractions = listOfContractions
+
+
+    def getListOfSypmtoms(self):
+        return self.listOfSymptoms
+
+    def getListOfDiseases(self):
+        return self.listOfDiseases
+
+    def getListOfDrugs(self):
+        return self.listOfDrugs
+
+    def getListOfInverters(self):
+        return self.listOfInverters
+
+    def getListOfPosWords(self):
+        return self.listOfPoswords
+
+    def getListOfContractions(self):
+        return self.listOfContractions
 
 
     def checkForDrugs(self, sentence):
