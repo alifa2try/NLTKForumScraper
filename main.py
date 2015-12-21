@@ -45,12 +45,15 @@ def main():
     argExtractor = buildArgExtractorWithDataLists()
     forums = postsGatherer.gatherForums()
     dbobj = dataBaseConnector('DBConnector.ini')
-
+    postCount, forumCount = 0
     # Loop through each of the forum posts and print the arguments onto the page. The arguments for and against each of the posts.
     # Some sort of extremley Naive Bayesian classifier 
 
     for forum in forums:
         posts = forum.getPosts()
+
+        postCount = postCount + len(posts)
+        forumCount = forumCount + 1
 
         logging.info('Starting [main]: Beginning to search for symptoms and diseases within the posts')
 
@@ -97,8 +100,7 @@ def main():
                         dbobj.insert(insertSql)
                 
                 naturalLanguageWhiz.extractConnectingVerbs(sentence.lower(), symptomsFound, drugsFound, dbobj)
-                sideEffectsLevelExtractor.checkForMentionOfNoSymptoms(sentence.lower(), argExtractor, dbobj)
-                sideEffectsLevelExtractor.checkForInverterWordInPreceedingSentence(sentence.lower(), argExtractor, dbobj)
+                sideEffectsLevelExtractor.checkSideEffectStatuses(sentence.lower(), argExtractor, dbobj)
 
 
                 # TODO: Move this ASAP. This checks to see if symptoms have worsened or not
@@ -126,6 +128,7 @@ def main():
     # Now run through and print off the list of symptoms and diseases found relative to the drug
     # In this simple script we have taken the reviews on tamoxifen 
     displayArguments.constructXML(forums)
+    loggin.info('End of [main]: Processed: ' + postCount + ' posts')
     logging.info('Finished [main]: Finished Process Succesfully')
 
 

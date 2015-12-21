@@ -13,9 +13,24 @@ logger = logging.getLogger(__name__)
 '''
 
 
-def checkForSideEffectStatuses(sentece, argExtractor, dbobj):
+def checkSideEffectStatuses(sentence, argExtractor, dbobj):
     
-    checkForMentionOfNoSymptoms(sentencem, argExtractor, dbobj)
+    (noSymptomResult, noSymptomStatus) = checkForMentionOfNoSymptoms(sentence, argExtractor, dbobj)
+
+    (noInverterResult, noInverterStatus) = checkForInverterWordInPreceedingSentence(sentence, argExtractor, dbobj)
+
+    if noSymptomResult and not noInverterResult:
+        insertIntoDB(sentence, noSymptomStatus, dbobj)
+    elif noSymptomResult and noInverterResult:
+        insertIntoDB(sentence, noSymptomStatus, dbobj)
+    elif noInverterResult and not noSymptomResult:
+        insertIntoDB(sentence, noInverterStatus, dbobj)
+    elif (noSymptomStatus and not noSymptomResult):
+        insertIntoDB(sentence, noSymptomStatus, dbobj)
+    elif (noInverterStatus and not noInverterResult):
+        insertIntoDB(sentence, noInverterStatus, dbobj)
+
+
 
 
 
@@ -38,9 +53,9 @@ def checkForMentionOfNoSymptoms(sentence, argExtractor, dbobj):
         preceedingSentence = sentence[0:(indexOfSymptomKeyWord - 1)]
         break
 
-    # This means we could not find the key word
+    # This means we could not find the key word from the side effects list
     if preceedingSentence == '':
-        return
+        return (False, symptomMentioned)
 
     try:
         taggedSentence = naturalLanguageWhiz.tag(preceedingSentence)
@@ -54,11 +69,13 @@ def checkForMentionOfNoSymptoms(sentence, argExtractor, dbobj):
 
     if result == True:
         symptomMentioned = 'No Side Effects'
+        return (True, symptomMentioned)
     else:
         symptomMentioned = 'Side effects Present'
+        return (False, symptomMentioned)
 
-    if symptomMentioned != '':
-        insertIntoDB(sentence, symptomMentioned, dbobj)
+    
+
 
 def checkForInverterWordInPreceedingSentence(sentence, argExtractor, dbobj):
 
@@ -84,9 +101,9 @@ def checkForInverterWordInPreceedingSentence(sentence, argExtractor, dbobj):
         preceedingSentence = expandedSentence[0:(indexOfSymptomKeyWord - 1)]
         break
 
-    # This means we could not find the key word
+    # This means we could not find the key word from the side effects list
     if preceedingSentence == '':
-        return
+        return (False, symptomMentioned)
 
     try:
         taggedSentence = naturalLanguageWhiz.tag(preceedingSentence)
@@ -99,19 +116,18 @@ def checkForInverterWordInPreceedingSentence(sentence, argExtractor, dbobj):
     result = argExtractor.checkIfInverterWordInSentence(taggedSentence)
 
     if result == True:
-        symptomMentioned = 'Possibly No Side Effects'
+        symptomMentioned = 'Possibly no side effects'
+        return (True, symptomMentioned)
     else:
         symptomMentioned = 'Side effects Present'
-
-    if symptomMentioned != '':
-        insertIntoDB(sentence, symptomMentioned, dbobj)
+        return (False, symptomMentioned)
 
 
 def insertIntoDB(sentence, category, dbobj):
 
     sqlSentence = (sentence.replace("'","\\'"))
 
-    insertSql = "INSERT INTO SideEffectsPresent (Sentence, SideEffectsStatus, Drug) VALUES (%s, %s, %s);" % ("'"+ sentence + "'", "'"+ symptomMentioned + "'", "'" + '' + "'")
+    insertSql = "INSERT INTO SideEffectsPresent (Sentence, SideEffectsStatus, Drug) VALUES (%s, %s, %s);" % ("'"+ sqlSentence + "'", "'"+ category + "'", "'" + '' + "'")
     dbobj.insert(insertSql)
 
 

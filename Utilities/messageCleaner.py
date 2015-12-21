@@ -7,7 +7,7 @@ def removeSpecialCharacter(message):
     # " ".join(message.split())
     # TODO: Make sure to recomment this again. This was changed so we can only remove white spaces for the diseaseGatherer module
     #messageCleaned = re.sub("[^a-zA-Z]", " ", message)
-    return messageCleaned
+    return messageCleaned;
 
 # Function to remove stopwords from each of the messages
 def removeStopWords(message):
