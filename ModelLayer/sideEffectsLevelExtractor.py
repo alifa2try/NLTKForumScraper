@@ -13,7 +13,7 @@ logger = logging.getLogger(__name__)
 '''
 
 
-def checkSideEffectStatuses(sentence, argExtractor, dbobj):
+def checkSideEffectStatuses(sentence, argExtractor, treatment, dbobj):
     
     (noSymptomResult, noSymptomStatus) = checkForMentionOfNoSymptoms(sentence, argExtractor)
 
@@ -25,19 +25,19 @@ def checkSideEffectStatuses(sentence, argExtractor, dbobj):
     '''
 
     if noSymptomResult:
-        insertIntoDB(sentence, noSymptomStatus, dbobj)
+        insertIntoDB(sentence, noSymptomStatus, treatment, dbobj)
 
     elif symptomAndSideEffectMentioned:
-        insertIntoDB(sentence, symptomAndSideEffectMentionedStatus, dbobj)
+        insertIntoDB(sentence, symptomAndSideEffectMentionedStatus, treatment, dbobj)
 
     elif noInverterResult and not noSymptomResult:
-        insertIntoDB(sentence, noInverterStatus, dbobj)
+        insertIntoDB(sentence, noInverterStatus, treatment, dbobj)
     
     elif (noSymptomStatus and not noSymptomResult):
-        insertIntoDB(sentence, noSymptomStatus, dbobj)
+        insertIntoDB(sentence, noSymptomStatus, treatment, dbobj)
     
     elif (noInverterStatus and not noInverterResult):
-        insertIntoDB(sentence, noInverterStatus, dbobj)
+        insertIntoDB(sentence, noInverterStatus, treatment, dbobj)
 
 
 
@@ -169,11 +169,11 @@ def checkIfSymptomAndSideEffectMentioned(sentence, argExtractor):
     return (False, sideEffectStatus)
 
 
-def insertIntoDB(sentence, category, dbobj):
+def insertIntoDB(sentence, category, treatment, dbobj):
 
     sqlSentence = (sentence.replace("'","\\'"))
 
-    insertSql = "INSERT INTO SideEffectsPresent (Sentence, SideEffectsStatus, Drug) VALUES (%s, %s, %s);" % ("'"+ sqlSentence + "'", "'"+ category + "'", "'" + '' + "'")
+    insertSql = "INSERT INTO SideEffectsPresent (Sentence, SideEffectsStatus, Drug) VALUES (%s, %s, %s);" % ("'"+ sqlSentence + "'", "'"+ category + "'", "'" + treatment + "'")
     dbobj.insert(insertSql)
 
 

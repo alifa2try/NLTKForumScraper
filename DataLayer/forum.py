@@ -8,11 +8,12 @@ class forum(object):
         posts: This will hold a set of posts object
     """
 
-    def __init__(self, forumName, url, maxScore, posts):
+    def __init__(self, forumName, url, maxScore, posts, treatment):
         self.forumName = forumName
         self.url = url
         self.maxScore = maxScore
         self.posts = posts
+        self.treatment = treatment
 
     def getName(self):
         return self.forumName
@@ -34,6 +35,9 @@ class forum(object):
 
     def getmaxScore(self):
         return maxScore
+
+    def getTreatment(self):
+        return self.treatment
 
 
 

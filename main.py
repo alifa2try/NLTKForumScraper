@@ -10,6 +10,8 @@ from ModelLayer import naturalLanguageWhiz
 from ModelLayer import sideEffectsLevelExtractor
 from DataLayer.dataBaseConnector import dataBaseConnector
 from DataLayer import additionalDataGatherer
+from ModelLayer import symptomConditionExtractor
+from ModelLayer import experienceExtractor
 
 def buildArgExtractorWithDataLists():
     logging.info('Starting [main]: Building data lists')
@@ -101,8 +103,9 @@ def main():
                         dbobj.insert(insertSql)
                 
                 naturalLanguageWhiz.extractConnectingVerbs(sentence.lower(), symptomsFound, drugsFound, dbobj)
-                sideEffectsLevelExtractor.checkSideEffectStatuses(sentence.lower(), argExtractor, dbobj)
-
+                sideEffectsLevelExtractor.checkSideEffectStatuses(sentence.lower(), argExtractor, forum.getTreatment(), dbobj)
+                symptomConditionExtractor.checkSymptomConditions(sentence.lower(), sentenceScore, symptomsFound, forum.getTreatment(), argExtractor, dbobj)
+                experienceExtractor.checkForMentionOfSentimentOnly(sentence, sentenceScore, symptomsFound, forum.getTreatment(), argExtractor, dbobj)
 
                 # TODO: Move this ASAP. This checks to see if symptoms have worsened or not
                 if (sentenceScore != 0) and (len(nounPhrases) + len(symptomsFound) > 0):
@@ -116,8 +119,6 @@ def main():
                         logging.info('HACK: Possibly Worsened Symptom: Presence of Symptom but no verb found')    
                     logging.info(symptomsFound)
                     logging.info(sentence)
-
-                
 
 
             post.setPositiveWordScore(str(postWordScore))
