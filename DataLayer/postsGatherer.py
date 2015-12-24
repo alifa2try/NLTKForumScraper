@@ -37,6 +37,10 @@ def __instantiateForumsLists():
 
     webmd = []
     # WebMD.com - all of the urls to the appended to this list
+    '''
+        These reviews are all of the tamoxifen reviews
+    '''
+
     webmd.append(['http://www.webmd.com/drugs/drugreview-4497-tamoxifen+oral.aspx?drugid=4497&drugname=tamoxifen+oral&pageIndex=0&sortby=3&conditionFilter=-500', 'tamoxifen'])
     webmd.append(['http://www.webmd.com/drugs/drugreview-4497-tamoxifen+oral.aspx?drugid=4497&drugname=tamoxifen+oral&pageIndex=1&sortby=3&conditionFilter=-500', 'tamoxifen'])
     webmd.append(['http://www.webmd.com/drugs/drugreview-4497-tamoxifen+oral.aspx?drugid=4497&drugname=tamoxifen+oral&pageIndex=2&sortby=3&conditionFilter=-500', 'tamoxifen'])
@@ -103,6 +107,30 @@ def __instantiateForumsLists():
     webmd.append(['http://www.webmd.com/drugs/drugreview-4497-tamoxifen+oral.aspx?drugid=4497&drugname=tamoxifen+oral&pageIndex=62&sortby=3&conditionFilter=-500', 'tamoxifen'])
     webmd.append(['http://www.webmd.com/drugs/drugreview-4497-tamoxifen+oral.aspx?drugid=4497&drugname=tamoxifen+oral&pageIndex=63&sortby=3&conditionFilter=-500', 'tamoxifen'])
 
+    '''
+       These are a few reviews from a nother drug called Arimidex. It is also a breast cancer drug 
+    '''
+    webmd.append(['http://www.webmd.com/drugs/drugreview-4511-Arimidex+oral.aspx?drugid=4511&drugname=Arimidex+oral&pageIndex=0&sortby=3&conditionFilter=-500', 'armimidex'])
+    webmd.append(['http://www.webmd.com/drugs/drugreview-4511-Arimidex+oral.aspx?drugid=4511&drugname=Arimidex+oral&pageIndex=1&sortby=3&conditionFilter=-500', 'armimidex'])
+    webmd.append(['http://www.webmd.com/drugs/drugreview-4511-Arimidex+oral.aspx?drugid=4511&drugname=Arimidex+oral&pageIndex=2&sortby=3&conditionFilter=-500', 'armimidex'])
+    webmd.append(['http://www.webmd.com/drugs/drugreview-4511-Arimidex+oral.aspx?drugid=4511&drugname=Arimidex+oral&pageIndex=3&sortby=3&conditionFilter=-500', 'armimidex'])
+    webmd.append(['http://www.webmd.com/drugs/drugreview-4511-Arimidex+oral.aspx?drugid=4511&drugname=Arimidex+oral&pageIndex=4&sortby=3&conditionFilter=-500', 'armimidex'])
+    webmd.append(['http://www.webmd.com/drugs/drugreview-4511-Arimidex+oral.aspx?drugid=4511&drugname=Arimidex+oral&pageIndex=5&sortby=3&conditionFilter=-500', 'armimidex'])
+    webmd.append(['http://www.webmd.com/drugs/drugreview-4511-Arimidex+oral.aspx?drugid=4511&drugname=Arimidex+oral&pageIndex=6&sortby=3&conditionFilter=-500', 'armimidex'])
+    webmd.append(['http://www.webmd.com/drugs/drugreview-4511-Arimidex+oral.aspx?drugid=4511&drugname=Arimidex+oral&pageIndex=7&sortby=3&conditionFilter=-500', 'armimidex'])
+    webmd.append(['http://www.webmd.com/drugs/drugreview-4511-Arimidex+oral.aspx?drugid=4511&drugname=Arimidex+oral&pageIndex=8&sortby=3&conditionFilter=-500', 'armimidex'])
+    webmd.append(['http://www.webmd.com/drugs/drugreview-4511-Arimidex+oral.aspx?drugid=4511&drugname=Arimidex+oral&pageIndex=9&sortby=3&conditionFilter=-500', 'armimidex'])
+    webmd.append(['http://www.webmd.com/drugs/drugreview-4511-Arimidex+oral.aspx?drugid=4511&drugname=Arimidex+oral&pageIndex=10&sortby=3&conditionFilter=-500', 'armimidex'])
+    webmd.append(['http://www.webmd.com/drugs/drugreview-4511-Arimidex+oral.aspx?drugid=4511&drugname=Arimidex+oral&pageIndex=11&sortby=3&conditionFilter=-500', 'armimidex'])
+    webmd.append(['http://www.webmd.com/drugs/drugreview-4511-Arimidex+oral.aspx?drugid=4511&drugname=Arimidex+oral&pageIndex=12&sortby=3&conditionFilter=-500', 'armimidex'])
+    webmd.append(['http://www.webmd.com/drugs/drugreview-4511-Arimidex+oral.aspx?drugid=4511&drugname=Arimidex+oral&pageIndex=13&sortby=3&conditionFilter=-500', 'armimidex'])
+    webmd.append(['http://www.webmd.com/drugs/drugreview-4511-Arimidex+oral.aspx?drugid=4511&drugname=Arimidex+oral&pageIndex=14&sortby=3&conditionFilter=-500', 'armimidex'])
+    webmd.append(['http://www.webmd.com/drugs/drugreview-4511-Arimidex+oral.aspx?drugid=4511&drugname=Arimidex+oral&pageIndex=15&sortby=3&conditionFilter=-500', 'armimidex'])
+    webmd.append(['http://www.webmd.com/drugs/drugreview-4511-Arimidex+oral.aspx?drugid=4511&drugname=Arimidex+oral&pageIndex=16&sortby=3&conditionFilter=-500', 'armimidex'])
+    webmd.append(['http://www.webmd.com/drugs/drugreview-4511-Arimidex+oral.aspx?drugid=4511&drugname=Arimidex+oral&pageIndex=17&sortby=3&conditionFilter=-500', 'armimidex'])
+    webmd.append(['http://www.webmd.com/drugs/drugreview-4511-Arimidex+oral.aspx?drugid=4511&drugname=Arimidex+oral&pageIndex=18&sortby=3&conditionFilter=-500', 'armimidex'])
+    webmd.append(['http://www.webmd.com/drugs/drugreview-4511-Arimidex+oral.aspx?drugid=4511&drugname=Arimidex+oral&pageIndex=19&sortby=3&conditionFilter=-500', 'armimidex'])
+    webmd.append(['http://www.webmd.com/drugs/drugreview-4511-Arimidex+oral.aspx?drugid=4511&drugname=Arimidex+oral&pageIndex=20&sortby=3&conditionFilter=-500', 'armimidex'])
 
     
     for forum in webmd:
