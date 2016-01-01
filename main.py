@@ -105,7 +105,7 @@ def main():
                 naturalLanguageWhiz.extractConnectingVerbs(sentence.lower(), symptomsFound, drugsFound, dbobj)
                 sideEffectsLevelExtractor.checkSideEffectStatuses(sentence.lower(), argExtractor, forum.getTreatment(), dbobj)
                 symptomConditionExtractor.checkSymptomConditions(sentence.lower(), sentenceScore, symptomsFound, forum.getTreatment(), argExtractor, dbobj)
-                experienceExtractor.checkForMentionOfSentimentOnly(sentence, sentenceScore, symptomsFound, forum.getTreatment(), argExtractor, dbobj)
+                experienceExtractor.checkForMentionOfSentimentOnly(sentence, sentenceScore, symptomsFound, drugsFound, forum.getTreatment(), argExtractor, dbobj)
 
                 # TODO: Move this ASAP. This checks to see if symptoms have worsened or not
                 if (sentenceScore != 0) and (len(nounPhrases) + len(symptomsFound) > 0):
