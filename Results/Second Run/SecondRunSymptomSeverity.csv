@@ -1,0 +1,398 @@
+Sentence,SymptomCriticality,Symptom,Drug
+"after much research and talking to doctors, the conclusion is that chemo and tamoxifen seem to have precipitated other chronic illnesses, chronic fatigue, fibromyalgia, osteoarthirtis, osteopenia, clinical depression, gastroenteritis, worsened ibs and ptsd.",Symptoms are bad: Presence of negative verb + symptoms,fatigue,tamoxifen
+"my legs, lower back & fingers are usually swollen and usually in pain.",Symptoms are bad: Presence of negative verb + symptoms,pain,tamoxifen
+"i wanted  off the tamoxifen, due to the weakness in my legs & fatigue.",Symptoms are possibly bad: symptoms mentioned but no verb found,fatigue,tamoxifen
+"so far, the main complaint i have is fatigue.",Symptoms are bad: Presence of negative verb + symptoms,fatigue,tamoxifen
+"some joint pain, vaginal discharge (clear mostly) and the best thing about tommy is that it has calms me down.",Symptoms are ok: Presence of positive verb + symptoms,joint pain,tamoxifen
+i experience hot flashes.,Symptoms are possibly bad: symptoms mentioned but no verb found,hot flashes,tamoxifen
+i have joint pain which make it hard to walk.,Symptoms are possibly bad: symptoms mentioned but no verb found,joint pain,tamoxifen
+the joint pain was unbearable so my oncologist decided to take me off it for 6 months.,Symptoms are possibly bad: symptoms mentioned but no verb found,joint pain,tamoxifen
+after 6 months of that he put me back up to the full dose and the pain didn't return!,Symptoms are possibly bad: symptoms mentioned but no verb found,pain,tamoxifen
+my periods are here and there but are quite heavy and painful when i do get them.,Symptoms are possibly bad: symptoms mentioned but no verb found,pain,tamoxifen
+my joint pain makes it difficult to walk.,Symptoms are possibly bad: symptoms mentioned but no verb found,joint pain,tamoxifen
+"seem to get lethargic, tired around 3-5pm, but take my medication just before bed, 10-11pm.",Symptoms are bad: Presence of negative verb + symptoms,tired,tamoxifen
+when i started the medicine i was a pescitarian( only at fish or seafood)  i have maybe two hot flashes at night.,Symptoms are possibly bad: symptoms mentioned but no verb found,hot flashes,tamoxifen
+mood swings and bone pain are my 2 main issues.,Symptoms are possibly bad: symptoms mentioned but no verb found,bone pain,tamoxifen
+"so far i am very fatigued, have headaches and some physical aches and pains.",Symptoms are bad: Presence of negative verb + symptoms,fatigue,tamoxifen
+"i have much less anxiety about having a cancer re-occurrence.""",Symptoms are possibly bad: symptoms mentioned but no verb found,anxiety,tamoxifen
+"""bones hurt a lot, hot flashes were really bad.""",Symptoms are bad: Presence of negative verb + symptoms,hot flashes,tamoxifen
+"i have had hot flashes, no period (that stopped after my second chemo in april 2013), sex drive has disappeared (also from chemo & tamoxifen combined) and i have had pelvic pain (tend to be more apparent when i lay on my back), joint pain(in my elbow and where legs join pelvic) and lower back pain.",Symptoms are possibly bad: symptoms mentioned but no verb found,back pain,tamoxifen
+"reading a lot of these comments has made me now realize that all the pains & aches i have been having, truly are side effects from the tamoxifen.",Symptoms are possibly bad: symptoms mentioned but no verb found,pain,tamoxifen
+"there were a lot of side effects after stopping estrogen, dry skin, loss of libido, edgy feeling.",Symptoms are possibly bad: symptoms mentioned but no verb found,dry skin,tamoxifen
+i had hot flashes but did not feel them.,Symptoms are possibly bad: symptoms mentioned but no verb found,hot flashes,tamoxifen
+"i had hot flashes in the beginning, but finally went away.""",Symptoms are possibly bad: symptoms mentioned but no verb found,hot flashes,tamoxifen
+"it made me very tired (loss of vitality) but it is much better now; had constipation but increased my fiber, water and exercise - all is well as long as i do this; joint pain in my hips but is better with the exercise, nausea - i had a little when i started, it got better and now it is back and worse - i have started taking pepto-bismol and it has helped - you can try mint (candy, gum); anxiety - happens occasionally but so far tolerable.",Symptoms are ok: Presence of positive verb + symptoms,anxiety,tamoxifen
+"hot flashes, severe sweating, insomnia, severe constipation, no menstrual periods, it has stopped it completely, bone pain, light headness, unsteadiness, nausea....i fear what i am going to experience next.",Symptoms are bad: Presence of negative verb + symptoms,bone pain,tamoxifen
+i have shrunk inside a bit so now sex is painful.,Symptoms are possibly bad: symptoms mentioned but no verb found,pain,tamoxifen
+"""i have been on tamoxifen for 10months now..i have had hot flashes, night sweats, mood swings, heavy menstrual bleeding, discharge, headaches and now back pain.",Symptoms are possibly bad: symptoms mentioned but no verb found,back pain,tamoxifen
+"""i had been suffering with sciatica for a number of years, when it suddenly worsened.",Symptoms are bad: Presence of negative verb + symptoms,sciatica,naproxen
+i started getting shooting pains and severe weakness in both of my legs.,Symptoms are possibly bad: symptoms mentioned but no verb found,pain,naproxen
+this is the only drug that helps my si back and hip pain.,Symptoms are possibly bad: symptoms mentioned but no verb found,hip pain,naproxen
+"""naproxen helped to lessen the pain of herniated discs, but i experienced shortness of breath and was only able to get through 10 mins of cardio class.",Symptoms are possibly bad: symptoms mentioned but no verb found,pain,naproxen
+"""it does absolutely nothing for my pain.""",Symptoms are possibly bad: symptoms mentioned but no verb found,pain,naproxen
+tried as desperate for all day pain relief from sciatic nerve.,Symptoms are bad: Presence of negative verb + symptoms,pain,naproxen
+"""this should be the first thing you take when you realize you have back pain.",Symptoms are possibly bad: symptoms mentioned but no verb found,back pain,naproxen
+"i have noticed that for extended use (2-5 days) the pain symptoms slowly come back, but at least this is something i can buy otc.""",Symptoms are possibly bad: symptoms mentioned but no verb found,pain,naproxen
+"""i was suffering from the common cold and had symptoms of dry cough, congested sinus, large headache, slight ear pain, sore throat, and muscle pain in my knees and gleutus maximus.",Symptoms are bad: Presence of negative verb + symptoms,cough,naproxen
+"also, i would wake up in the middle of sleeping, mumbling from my symptoms and pain.",Symptoms are possibly bad: symptoms mentioned but no verb found,pain,naproxen
+"the headache was gone, and so was the muscle pain.",Symptoms are possibly bad: symptoms mentioned but no verb found,headache,naproxen
+i started to experience pain after having to pick up heavy packs of water bottles and other heavy items.,Symptoms are bad: Presence of negative verb + symptoms,pain,naproxen
+the pain was all in my lower back.,Symptoms are possibly bad: symptoms mentioned but no verb found,pain,naproxen
+i would rate my pain on a scale from 1 to 10; a 7.,Symptoms are possibly bad: symptoms mentioned but no verb found,pain,naproxen
+it was a sharp stabbing pulling pain in my lower back and it even hurt to take a deep breath.,Symptoms are bad: Presence of negative verb + symptoms,pain,naproxen
+"""i have tendonitis in both elbows and ankles i am young and fit very active person a few months ago i could barely walk or hold a cup of water to my mouth without being in consent pain, i pushed through as much as i could but one day it got too much i went to my doctor who prescribed me 500mg naproxen and instantly the pain has gone, i am back running and at the gym doing weights.",Symptoms are possibly bad: symptoms mentioned but no verb found,pain,naproxen
+"when ever i take the medication my pain reduces from like a 6 to a 4 which is awesome!!""",Symptoms are possibly bad: symptoms mentioned but no verb found,pain,naproxen
+"i have lost weight and pain has been reduced.""",Symptoms are bad: Presence of negative verb + symptoms,pain,naproxen
+"the pharmacist told me that at worst i would experience indigestion, and it should not be combined with other pain medication or else i'd deal with internal bleeding.",Symptoms are possibly bad: symptoms mentioned but no verb found,bleeding,naproxen
+"what i wasn't ready for was crippling fatigue, vision impairment, nausea, urine darkening, cold sweats, and my back pain getting even worse.",Symptoms are bad: Presence of negative verb + symptoms,back pain,naproxen
+"""i take naproxen for jaw pain and it's really hit-or-miss.",Symptoms are possibly bad: symptoms mentioned but no verb found,pain,naproxen
+"""i started taking this per my doctor instead of tylenol for lower back pain.",Symptoms are possibly bad: symptoms mentioned but no verb found,back pain,naproxen
+"i had stomach issues.. could not eat, vomited, severe itching on the legs and armsi """,Symptoms are bad: Presence of negative verb + symptoms,itching,naproxen
+"""suffered severe period pain doctor put me on naproxen in 2 months have no pain and no period flow it's basically stopped but side effects i got itchy hives but it's great..but doctor says pain is fibroids that have to come out i wanted to stay on naproxen but she said it's only a solution not the end result....""",Symptoms are bad: Presence of negative verb + symptoms,hives,naproxen
+i took the medication with food as prescribed and still this is the worst heartburn i have ever had in my life.,Symptoms are possibly bad: symptoms mentioned but no verb found,heartburn,naproxen
+excruciating pain in lower si region of my back following an aggressive 30 mile bick ride and a few days of surfing.,Symptoms are bad: Presence of negative verb + symptoms,pain,naproxen
+woke up the next morning with shooting pain in low back which progressed to shooting pains running down my glutes and referred pain to the hip flexor region.,Symptoms are possibly bad: symptoms mentioned but no verb found,pain,naproxen
+for two weeks this was extremely painful and did not subside even w/ ice applications and finally chiropractic visits 5 total and lots of advil.,Symptoms are possibly bad: symptoms mentioned but no verb found,pain,naproxen
+"i highly recommend for anyone with back pain as it really helped me!""",Symptoms are ok: Presence of positive verb + symptoms,back pain,naproxen
+"started with joint pain, chills, developed minor cataract after 1 year on medication (now advanced enough during second year to have extraction).",Symptoms are ok: Presence of positive verb + symptoms,chills,tamoxifen
+i had 3 weeks of radiotherapy and have been in pain ever since.,Symptoms are possibly bad: symptoms mentioned but no verb found,pain,tamoxifen
+had such a big seroma i was crying with the pain.,Symptoms are possibly bad: symptoms mentioned but no verb found,pain,tamoxifen
+i feel tired and lethargic all the time.,Symptoms are bad: Presence of negative verb + symptoms,tired,tamoxifen
+"no sex drive, brain fog,muscle aches, and severe constipation are the worst things because these were never a problem before tamox.",Symptoms are possibly bad: symptoms mentioned but no verb found,constipation,tamoxifen
+"the next time i got my prescription filled, i noticed that ""hair loss"" was listed after ""stroke"" under side effects, so there.",Symptoms are possibly bad: symptoms mentioned but no verb found,hair loss,tamoxifen
+"the hair loss has stopped, but i also started taking biotin to help my hair.",Symptoms are possibly bad: symptoms mentioned but no verb found,hair loss,tamoxifen
+"yea ive had the migranes,very rare now,hot flashes occasionally the only thing that has got more frequent is leg and foot cramps bad and my vision seems to be getting weak.",Symptoms are possibly bad: symptoms mentioned but no verb found,hot flashes,tamoxifen
+i ended up bleeding for 10 months in a row so stopped taking it.,Symptoms are bad: Presence of negative verb + symptoms,bleeding,tamoxifen
+"comment:hot flashes depression, the worst of all is my ""fit of rage"" over nothing.",Symptoms are possibly bad: symptoms mentioned but no verb found,hot flashes,tamoxifen
+"i can live with hot flashes,aches,pains,headaches,etc.",Symptoms are possibly bad: symptoms mentioned but no verb found,headache,tamoxifen
+"recently, sept. 2014, i had a d & c to stop excessive bleeding, remove polyps and reduce the thickness of uterus walls.",Symptoms are possibly bad: symptoms mentioned but no verb found,bleeding,tamoxifen
+"although my oncologist took me off of the tamoxifen immediately, august 2014, because of the bleeding - the side effects continues.it makes me wonder if the benefits of the medication outweighs the many side effects that the medication causes.",Symptoms are ok: Presence of positive verb + symptoms,bleeding,tamoxifen
+"during my two months of taking the medication, i experienced chills, night sweats, extreme spike in sugar readings, aches and pains -- so bad i could not make it from room to room, face rash, etc.",Symptoms are possibly bad: symptoms mentioned but no verb found,chills,tamoxifen
+headaches were bad.,Symptoms are possibly bad: symptoms mentioned but no verb found,headache,tamoxifen
+comment:i been on this med since january 2014  i had hot flashes which slowed down alot.i have muscle aches and then my lining was thick so 3 weeks ago i had a dnc now i got my period heavy again.i am going to gyno today to talk to her i want off of this i havent felt the same since taken it.i was stage 1  my limpnodes were removed all good.i really thought u dont get your period on this meds.i am 54 years old had breast cancer 2013.so far so good.and just started getting my period again it horriable.that it sooo heavy.....oh well thats my storyhide full comment,Symptoms are bad: Presence of negative verb + symptoms,hot flashes,tamoxifen
+"very rarely, i will have mild hot flashes.",Symptoms are possibly bad: symptoms mentioned but no verb found,hot flashes,tamoxifen
+the only side-effect i noticed was that my post-menopausal hot flashes were a little more frequent.,Symptoms are possibly bad: symptoms mentioned but no verb found,hot flashes,tamoxifen
+comment:had several fevers over 101 and had excruciating bone pain all over making it difficult to sleep or get up from sofa.hide full comment,Symptoms are bad: Presence of negative verb + symptoms,bone pain,tamoxifen
+comment:my   face & hands have a rash & swelling after being in the sun.,Symptoms are possibly bad: symptoms mentioned but no verb found,swelling,tamoxifen
+the only way i can tolerate it is to take something for anxiety.,Symptoms are possibly bad: symptoms mentioned but no verb found,anxiety,tamoxifen
+"comment:i am 64 i have been on the drug for 2 1/2 years normal i would not taken this drug but the other drugs contain steriod, side effects hot flashes night sweats pain in the legs i have not those since my 50's i have been off the drug for 2 mos because i had retina surgery had to be face down for one month i didnt want to deal with side effects guess what went away the drug can form crystals in the retina so now i have to see my retinal doctor twice a year now i have to make a choices eyes or cancer right now i am visually impaired due  to retiona problems in both eyeshide full comment",Symptoms are bad: Presence of negative verb + symptoms,hot flashes,tamoxifen
+"symptoms are hot flashes, achy bones/joints, trouble with sleeping at times.",Symptoms are possibly bad: symptoms mentioned but no verb found,hot flashes,tamoxifen
+i also have vaginal dryness and itching.,Symptoms are possibly bad: symptoms mentioned but no verb found,itching,tamoxifen
+"weight gain (15 lbs), rash on face, severe dizziness, fatigue all day long, achy joints, foggy brain, blurry eyes and diagnosed w/cataracts.",Symptoms are bad: Presence of negative verb + symptoms,dizziness,tamoxifen
+"and i get muscle cramps in obscure muscles, (ankles, side of foot).",Symptoms are possibly bad: symptoms mentioned but no verb found,muscle cramps,tamoxifen
+"comment:this drug has made my emotions go into over-drive, which brings about stress headaches and depression.hide full comment",Symptoms are possibly bad: symptoms mentioned but no verb found,headache,tamoxifen
+"comment:i have been taking tamoxifen for two yrs,i had chemo a bi-mast, i haven't had many side 
+effects, some hot flashes.",Symptoms are possibly bad: symptoms mentioned but no verb found,hot flashes,tamoxifen
+have been taking this medication for 3 years and hot flashes have mostly passed.,Symptoms are possibly bad: symptoms mentioned but no verb found,hot flashes,tamoxifen
+"have increasing pain in my knees and feet, some headaches, have gained about 10 pounds and have lost that sex drive and energy that most of the others have talked about.i also am experiencing blood capilaries very close to the skin on my forearms (just a scratch will bring the blood to the skin and sometimes bleed.)",Symptoms are bad: Presence of negative verb + symptoms,headache,tamoxifen
+"however, i get up each morning achy, with pain in my knees and legs,sometimes my hands.",Symptoms are possibly bad: symptoms mentioned but no verb found,pain,tamoxifen
+"comment:i've had some hot flashes,however it's the irregular periods, which are very heavy, which are caused by a thick lining forming on my uterus, which is giving me a hard time.",Symptoms are possibly bad: symptoms mentioned but no verb found,hot flashes,tamoxifen
+"not to mention feeing lethargic, tired and just plain miserable.",Symptoms are bad: Presence of negative verb + symptoms,tired,tamoxifen
+(they were really extreme and i don't want to experience that level of pain again.),Symptoms are possibly bad: symptoms mentioned but no verb found,pain,tamoxifen
+"comment:2 lumpectomy (right breast), radiation, started tamoxifen in jul, nausea passed after 30 days, hot flashes, night drenches, severe insomnia, joint pain (hands/legs), weight gain (20), fatigue, mild vision issues.",Symptoms are possibly bad: symptoms mentioned but no verb found,fatigue,tamoxifen
+"started super antibiotics in dec for infected cyst in breast, 10 days later intense spells lasting 20-25 mins with the following symptoms began, happened 2-4 times a day mostly in the evening (heart palpitations, loss of balance, dizziness, blurred vision, chg in distance vision, extreme pressure behind face/eyes, cognitive disruption (speech/processing data), headaches, elevated blood pressure.",Symptoms are bad: Presence of negative verb + symptoms,blurred vision,tamoxifen
+"worst for me is joint pain, especially in my hands!",Symptoms are possibly bad: symptoms mentioned but no verb found,joint pain,tamoxifen
+"however i am experiencing fatigue and bone pain especially my feet, my heels, my ankles and my lower legs.. and noticing some spider veins on my upper legs as well..",Symptoms are possibly bad: symptoms mentioned but no verb found,bone pain,tamoxifen
+i am just hoping  that all those aches and pains will eventually go away.,Symptoms are possibly bad: symptoms mentioned but no verb found,pain,tamoxifen
+comment:except for the hot flasheshide full comment,Symptoms are possibly bad: symptoms mentioned but no verb found,hot flashes,tamoxifen
+"i was diagnoised in aug 2011, did chemo, lumpsectomy with 27 lyphnodes removed, just completed radiation june 1, i was prescribe tamox in march but didn't actually start taking til april, i was a lil skeptical about taking this med so still not taking it as should i take it on mwf instead of everyday but i still experience the leg joint pains, hot flashes (not as severe as when i was on chemo), headaches (didn't realize they were from the med til i read reviews), tiredness (thought that was from radiation).",Symptoms are possibly bad: symptoms mentioned but no verb found,headache,tamoxifen
+comment:tired and fatiguehide full comment,Symptoms are possibly bad: symptoms mentioned but no verb found,fatigue,tamoxifen
+"the side effects were gradual but now they are full blown...fatigue, depression, hot flashes, joint pain.",Symptoms are possibly bad: symptoms mentioned but no verb found,fatigue,tamoxifen
+"comment:i am so saddened to read that other women are experiencing similar symptoms as myself - lethargy, mild depressive mood, night sweats, weight gain - i have lost the pep in my step.",Symptoms are bad: Presence of negative verb + symptoms,lethargy,tamoxifen
+"there's night sweats, insomnia, leg cramps-this really painful, fits of depression, vaginal discharge everyday, always feeling tired...lost 20lbs on the first 2 months 'cause i was terrified that anything i eat would kill me, so i quit the sodas, canned and preserved foods, sweets, rice, breads ... losing weight was maybe good at first, but my taste buds were so sad and i was miserable.",Symptoms are bad: Presence of negative verb + symptoms,pain,tamoxifen
+comment:i am experiencing serious hot flashes that last for hours.,Symptoms are possibly bad: symptoms mentioned but no verb found,hot flashes,tamoxifen
+"i have suffered severe insomnia, extreme fatigue, been diagnosed with major depressive disorder, i can't eat, i am completely nonfunctioning.",Symptoms are bad: Presence of negative verb + symptoms,fatigue,tamoxifen
+comment:i get up wih a headache everyday.,Symptoms are possibly bad: symptoms mentioned but no verb found,headache,tamoxifen
+"the weight gain has not happened; the pain in the legs have subsided; sex drive & exhaustion i believe is just an ordinary part of life; the hot flashes are still there, but seem to only happen right after i take the t.  i take it in the evening around supper and have hot flashes on and off all night; i will report however, that my lining of my uterus has thicken and had a dnc last month; would really like have all that removed so that isn't a concern but have to follow protocol before surgery can happen.",Symptoms are ok: Presence of positive verb + symptoms,hot flashes,tamoxifen
+"comment:lethargy, loss of appetitehide full comment",Symptoms are possibly bad: symptoms mentioned but no verb found,lethargy,tamoxifen
+comment:i feel that this drug is working very well for me although the hardest thing for me are the hot flashes that comes along with taking this drug.,Symptoms are possibly bad: symptoms mentioned but no verb found,hot flashes,tamoxifen
+"comment:left masectomy in march 2010 with lymph node removal on the left side; side effects of tamoxifan are weight gain; hot flashes, my oncologist put me on gapapenten to stop the side effects and it works like a dream.",Symptoms are ok: Presence of positive verb + symptoms,hot flashes,tamoxifen
+"i am losing weight after joining a slimming class, i take pain killers for the joint pain.......all in all after my initial kicking and screaming about taking tamoxifen...i wouldnt be upset if i had to take them the rest of my life!hide full comment",Symptoms are bad: Presence of negative verb + symptoms,joint pain,tamoxifen
+"hate the weight gain, the indigestion, and just feeling like a 70+ woman when, i am 47.",Symptoms are possibly bad: symptoms mentioned but no verb found,indigestion,tamoxifen
+no bone pains or headaches.,Symptoms are bad: Presence of negative verb + symptoms,bone pain,tamoxifen
+"i have some sleeplessness but dealing with it by taking tamoxifen in the morning, only one coffee in the morning, and dringking camomile warm tea before bedtime.",Symptoms are possibly bad: symptoms mentioned but no verb found,sleeplessness,tamoxifen
+"in fact,i notice a light weight loss this morning!",Symptoms are possibly bad: symptoms mentioned but no verb found,weight loss,tamoxifen
+i think this keeps me from having bone and joint pain and also keep blood clots which cause leg pains away.,Symptoms are bad: Presence of negative verb + symptoms,joint pain,tamoxifen
+the headaches were also migraine-level but did not respond to treatment.,Symptoms are possibly bad: symptoms mentioned but no verb found,headache,tamoxifen
+"comment:hot flashes
+side effect of this medicine.",Symptoms are possibly bad: symptoms mentioned but no verb found,hot flashes,tamoxifen
+hot flashes are getting less but bone and joint pain getting worse!,Symptoms are possibly bad: symptoms mentioned but no verb found,hot flashes,tamoxifen
+"comment:started t; took it for a year; the pain in the leg was so severe the dr stopped it; ran test; started it again in may, 2011; the pain has returned but not as bad; hot flashes have increased; this time it seems to make me more tired than usual, but not sure if the medication has caused this; loss of sex drive, but the side effects don't mention women in this area just men; so going to watch and document and compare; im hoping this medication is like other medications that is taken for a long period of time--either the side effects subside or one grows accustom to them....overall, i would rather prevent the breast cancer and sweat a little.",Symptoms are possibly bad: symptoms mentioned but no verb found,hot flashes,tamoxifen
+"not many hot flashes, but i don't sleep well; i now have age spots; i just feel old and rundown.",Symptoms are ok: Presence of positive verb + symptoms,hot flashes,tamoxifen
+"i walk everyday so i do stay active, but the bone pain makes it difficult.have had some depression but i am peri-menopausal so that could contribute.",Symptoms are possibly bad: symptoms mentioned but no verb found,bone pain,tamoxifen
+"weight gain, hot flashes, early menopause, leg/foot cramps.",Symptoms are possibly bad: symptoms mentioned but no verb found,hot flashes,tamoxifen
+comment:the main side effect i have experienced taking tamoxifen is hot flashes.,Symptoms are possibly bad: symptoms mentioned but no verb found,hot flashes,tamoxifen
+"can't believe how much my body has been put through the last 18months,have been on tamoxifen 9 months and experienced alot of side effects, vaginal itching/dryness, poor memory / concentration, muscle and joint aches and pains, fatigue/tiredness, nausea,mood swings,hot flashes,irratable,bad headaches, cramping and tenderness, weight gain etc etc.",Symptoms are bad: Presence of negative verb + symptoms,fatigue,tamoxifen
+"comment:i really hate this drug tamoxifen, but i guess it will help me live, but i wonder, my face stays red, i have gained weight, hot flashes are hard too deal with,i had my breast ca in june2010, chemo and radiation,and i am 51 with a son and it has been very hard, breast cancer is a very powerful illness,and if you have not had this dz you don't know what women really go threw.........",Symptoms are bad: Presence of negative verb + symptoms,hot flashes,tamoxifen
+the hot flashes have been better.,Symptoms are possibly bad: symptoms mentioned but no verb found,hot flashes,tamoxifen
+"still have the bone pain, but what upsets me more is the hair loss,weight gain and depression.",Symptoms are bad: Presence of negative verb + symptoms,bone pain,tamoxifen
+had osteoarthritis prior to all of this (have been rn for 30+ years) joint pain/weakness so severe i couldn't walk after 6months.,Symptoms are possibly bad: symptoms mentioned but no verb found,joint pain,tamoxifen
+lymphedema is not a pleasant side affect.,Symptoms are possibly bad: symptoms mentioned but no verb found,edema,tamoxifen
+so far the hot flashes arent bad but i do have joint and bone pain.,Symptoms are possibly bad: symptoms mentioned but no verb found,bone pain,tamoxifen
+"have been on tamoxifen for 1 1/2 years and i have hot flashes that come and go, along w/my period.",Symptoms are possibly bad: symptoms mentioned but no verb found,hot flashes,tamoxifen
+"have been on tomoxifn for 4 months now and have had awful side effects, hot flashes during the day and night so severe, i have to sleep on a towel - because it gets soaked everytime i have one and usually have to reapply my make up during the day.",Symptoms are possibly bad: symptoms mentioned but no verb found,hot flashes,tamoxifen
+haven't slept thru the night in 4 months and have started to get hip and ankle pains along with alot of forgetfulness - meet with my oncologist in two weeks - is it worth it?,Symptoms are possibly bad: symptoms mentioned but no verb found,ankle pain,tamoxifen
+right ankle swollen and now left hand & shoulder swells & is painful.,Symptoms are possibly bad: symptoms mentioned but no verb found,pain,tamoxifen
+the hot flashes are pretty extreme and sometimes make me feel nauseated.,Symptoms are possibly bad: symptoms mentioned but no verb found,hot flashes,tamoxifen
+i have been given neurontin to help with the hot flashes.,Symptoms are possibly bad: symptoms mentioned but no verb found,hot flashes,tamoxifen
+"experiencing some hot flashes, but nothing out of the ordinary.",Symptoms are possibly bad: symptoms mentioned but no verb found,hot flashes,tamoxifen
+can't say i've experienced joint pain.,Symptoms are possibly bad: symptoms mentioned but no verb found,joint pain,tamoxifen
+comment:i have encountered hot flashes.,Symptoms are possibly bad: symptoms mentioned but no verb found,hot flashes,tamoxifen
+the hot flashes are pretty severe.,Symptoms are possibly bad: symptoms mentioned but no verb found,hot flashes,tamoxifen
+"too many hot flashes, ankle swelling, insomnia, plus anxiety over risk of serious side effects.",Symptoms are possibly bad: symptoms mentioned but no verb found,anxiety,tamoxifen
+comment:i have alot of hot flashes sometimes to the point of sweating.,Symptoms are possibly bad: symptoms mentioned but no verb found,hot flashes,tamoxifen
+"started being nauseated all the time; swollen throat, muscle aches and being more fatigued.",Symptoms are bad: Presence of negative verb + symptoms,fatigue,tamoxifen
+need something to help with the nausea and sore throat.,Symptoms are possibly bad: symptoms mentioned but no verb found,sore throat,tamoxifen
+tired of feeling so bad lately.hide full comment,Symptoms are bad: Presence of negative verb + symptoms,tired,tamoxifen
+"comment:i taken tamoxifen for (5) years after having stage (2) breast cancer 10 years ago.i underwent chemo & radiation at the time.today,my breast cancer came back in my other breast.thank god,it's a stage 0 & all that is reguire for me is ""radiation"".my concern today is after radiation i must ""orally"" take another hormone treatment for the next (5) years.i had terrible side effects in the past from taking tamoxifen,mainly hot flashes,dryness with itching.i want to continue taking  some type of harmone treatment but i sure don't want any more increase of side effects.i'm now age 63 years of age & still occasionaly  sexually active.that was another side effect i didn't like.this happen 10 years ago,are their any new harmone replacements that i now can take besides tamoxifen?or will i have more increased side effects?",Symptoms are possibly bad: symptoms mentioned but no verb found,hot flashes,tamoxifen
+comment:i can only take 10 mg each day and i have feelings of exhaustion and horrible hot flashes.,Symptoms are possibly bad: symptoms mentioned but no verb found,hot flashes,tamoxifen
+"when i first went on the tam., i was miserable with hot flashes, joint pain, a terribly broken out face, and i could not sleep at night.",Symptoms are bad: Presence of negative verb + symptoms,hot flashes,tamoxifen
+"for the past 6 months, i've had terrible pain in my calves & easily pull my calf muscles when doing any kind of exercise.",Symptoms are possibly bad: symptoms mentioned but no verb found,pain,tamoxifen
+i was constantly cold & very fatigued - i attributed this to having 3 surgeries in 11 months.,Symptoms are possibly bad: symptoms mentioned but no verb found,fatigue,tamoxifen
+"for 4 months & am feeling less tired & cold, but continue with the cramps/pulled muscles.",Symptoms are possibly bad: symptoms mentioned but no verb found,tired,tamoxifen
+if the muslce pain con't.,Symptoms are possibly bad: symptoms mentioned but no verb found,pain,tamoxifen
+"i also had hot flashes, but i went thru immediate menopause so understandable.",Symptoms are possibly bad: symptoms mentioned but no verb found,hot flashes,tamoxifen
+"terrible hot flashes, do not sleep thru the night, rash on face, hip pain, rib pain.",Symptoms are possibly bad: symptoms mentioned but no verb found,hip pain,tamoxifen
+"comment:i have experienced terrible hot flashes, memory loss, blurry vision, depression, and recently terrible legs cramp.",Symptoms are possibly bad: symptoms mentioned but no verb found,hot flashes,tamoxifen
+"comment:for the first time using this medication i had ache and pain all over my body, just like when i was on chemo.",Symptoms are possibly bad: symptoms mentioned but no verb found,pain,tamoxifen
+"comment:hot flashes,insomnia,night sweats,weight gain,leg pain.",Symptoms are possibly bad: symptoms mentioned but no verb found,hot flashes,tamoxifen
+"leg&knee pain,back pain.anyone with estrogen breast cancer have fibroids as well?just curious,since they're estrogen provoked.",Symptoms are possibly bad: symptoms mentioned but no verb found,back pain,tamoxifen
+"i have had side effects such as night sweats, headaches, dizziness and blurred vision.",Symptoms are possibly bad: symptoms mentioned but no verb found,blurred vision,tamoxifen
+"the side effects of tamoxifin for me were weight gain, joints are painful and my face breaks out.",Symptoms are bad: Presence of negative verb + symptoms,pain,tamoxifen
+taking effexor now and my hot flashes are completely gone.,Symptoms are possibly bad: symptoms mentioned but no verb found,hot flashes,tamoxifen
+"i have not had the hot flashes (i take a vitamin e tablet in the morning and at night to combat this), but have experienced leg and foot cramps.",Symptoms are possibly bad: symptoms mentioned but no verb found,hot flashes,tamoxifen
+"comment:have not had many side effects from the medication, but i do have the start of a cataract (don't know if this is related to the tamoxifen), hot flashes that have caused a sleeping problem and problems with low back pain and joint pain.hide full comment",Symptoms are possibly bad: symptoms mentioned but no verb found,back pain,tamoxifen
+"my expercience with tamoxifen has been leg/foot cramping mostly at night, joint pain, short term memory problems, depression and hot flashes.",Symptoms are bad: Presence of negative verb + symptoms,hot flashes,tamoxifen
+last month my oncologist suggested taking same 400mg 2-4 times daily for depression and joint pain.,Symptoms are possibly bad: symptoms mentioned but no verb found,joint pain,tamoxifen
+so far my joint pain is about 80% better and my energy and motivation has noticably improved.,Symptoms are ok: Presence of positive verb + symptoms,joint pain,tamoxifen
+still having ocassional leg cramps at night but the hot flashes have decreased...not sure if it's due to the diet change or the same.,Symptoms are possibly bad: symptoms mentioned but no verb found,hot flashes,tamoxifen
+"i have no sex drive, constant rashes, infections, joint pain, headache and weight gain.",Symptoms are possibly bad: symptoms mentioned but no verb found,headache,tamoxifen
+severe joint and muscle pain.,Symptoms are possibly bad: symptoms mentioned but no verb found,muscle pain,tamoxifen
+had to stop all this exercise due to pain.,Symptoms are bad: Presence of negative verb + symptoms,pain,tamoxifen
+"main side effects since have been flushing, small headaches of short duration mainly around one eye, trouble sleeping, dizziness when suddenly sitting up or standing, no noticeable weight gain yet.",Symptoms are possibly bad: symptoms mentioned but no verb found,dizziness,tamoxifen
+i've read others comment on joint pain.,Symptoms are possibly bad: symptoms mentioned but no verb found,joint pain,tamoxifen
+it occured to my doc husband an uncommon side effect of the sweetener aspartame is joint pain.,Symptoms are possibly bad: symptoms mentioned but no verb found,joint pain,tamoxifen
+the only side effect has been hot flashes.,Symptoms are possibly bad: symptoms mentioned but no verb found,hot flashes,tamoxifen
+"night sweats, headaches.",Symptoms are possibly bad: symptoms mentioned but no verb found,headache,tamoxifen
+the only side effects i have experienced is some headaches.,Symptoms are possibly bad: symptoms mentioned but no verb found,headache,tamoxifen
+"notice pain in left heel, hair loss & brittle, ravenous appetite & weight gain, blurry vision, only occasional hot flash (tolerable).",Symptoms are possibly bad: symptoms mentioned but no verb found,hair loss,tamoxifen
+"i had swelling of face hands and feet, weight gain, unbearable leg and feet pain.",Symptoms are bad: Presence of negative verb + symptoms,pain,tamoxifen
+"hopefully on tamoxifen again, i will have the night sweats again but not the pain i have been experiencing with aromasin.",Symptoms are possibly bad: symptoms mentioned but no verb found,pain,tamoxifen
+i am sooo tired all the time.,Symptoms are bad: Presence of negative verb + symptoms,tired,tamoxifen
+"i'm having hot flashes, but they started with chemo, so don't know if it was that or the tamoxifen.",Symptoms are possibly bad: symptoms mentioned but no verb found,hot flashes,tamoxifen
+"cramping toes, unbelievable hot flashes, no appetite, extreme tiredness, fuzzy brained....i could go on.",Symptoms are bad: Presence of negative verb + symptoms,hot flashes,tamoxifen
+i have experienced major hot flashes day and night.,Symptoms are possibly bad: symptoms mentioned but no verb found,hot flashes,tamoxifen
+"comment:today was my first tablet i am a healthncare professional and am not looking forward to this experience i was diagnosed wit stage 1 estr positive oncotype score 26
+first lumpectomy 5/26 margins not clear 2nd surgery on 6/16  nodes neg 31 tx radiation which caused extreme fatigue--just getting over that-already have lots of joint pain and hard to walk and have situational depression so will be interesting to see if tamox increases symptoms i have put it in god's hands to help me get through the next 5 years and have good support system wish me luck and many prayershide full comment",Symptoms are bad: Presence of negative verb + symptoms,fatigue,tamoxifen
+"have had joint pain, depression, extreme fatigue, off and on with hot flashes ongoing.",Symptoms are possibly bad: symptoms mentioned but no verb found,fatigue,tamoxifen
+"comment:the first day i took thhis medication, i was got very sleepy, laid down for about an hour, and i woke up vomitingfor a long period of time , and was scared to take it agian until i consulted my docter.",Symptoms are bad: Presence of negative verb + symptoms,vomiting,tamoxifen
+"i then tried it agian a week later, and i have not had much sight effects except for the hot flashes.hide full comment",Symptoms are possibly bad: symptoms mentioned but no verb found,hot flashes,tamoxifen
+comment:i am suffering so much with joint pain.,Symptoms are bad: Presence of negative verb + symptoms,joint pain,tamoxifen
+"my question is, can tamoxifen cause severe joint pain and deformity?hide full comment",Symptoms are possibly bad: symptoms mentioned but no verb found,joint pain,tamoxifen
+"(muscle weakness, deep bone pain, fatigue etc.)",Symptoms are possibly bad: symptoms mentioned but no verb found,bone pain,tamoxifen
+it felt like having fibro-myalgia and chronic fatigue syndrome at the same time.,Symptoms are possibly bad: symptoms mentioned but no verb found,fatigue,tamoxifen
+comment:i do have leg pain which is quite significant.i have to take pain meds for it.,Symptoms are possibly bad: symptoms mentioned but no verb found,leg pain,tamoxifen
+"i also get hot flashes that are different from usual, it is a feeling of hot and cold all over my body.",Symptoms are possibly bad: symptoms mentioned but no verb found,hot flashes,tamoxifen
+"i do get fatigued, but i train horses so i am very physical.",Symptoms are bad: Presence of negative verb + symptoms,fatigue,tamoxifen
+"side effects, overheating, weight gain, loss of breath, tired, can't exercise, face stays red for hours after exercise or being in sun.",Symptoms are bad: Presence of negative verb + symptoms,tired,tamoxifen
+"comment:when i first start taking it i had a allergic reaction, swelling of the tongue,hard time swallowing, trouble breathing and ended up in the emergency room, but since then i haven't had any problems with it.hide full comment",Symptoms are bad: Presence of negative verb + symptoms,swelling,tamoxifen
+"depression, blood pressure high even w/pills to lower, outer vaginal rash/itching all over, joint pain i limp after sitting at my desk at work, or driving, isomni, sweating during the day just going to the bathroom or moving around, tired/ lack of motivation, gained 10 pounds immediately and then kept gaining and swelling everywhere could tell if i had any salt the day before.",Symptoms are bad: Presence of negative verb + symptoms,itching,tamoxifen
+"only side effects i've experienced are heightened pms symptoms, including mood swings, night sweats, and extreme irritability.",Symptoms are possibly bad: symptoms mentioned but no verb found,irritability,tamoxifen
+know i'm having really bad joint pain.,Symptoms are possibly bad: symptoms mentioned but no verb found,joint pain,tamoxifen
+"couldn't sleep, weight gain, hair loss, deep depression, among other side effects.",Symptoms are possibly bad: symptoms mentioned but no verb found,hair loss,tamoxifen
+"comment: shortness of breath,leg painhide full comment",Symptoms are possibly bad: symptoms mentioned but no verb found,leg pain,tamoxifen
+jan 07-had hot flashes and night sweats for at least 1 year-no other side effects other than fatiguehide full comment,Symptoms are possibly bad: symptoms mentioned but no verb found,fatigue,tamoxifen
+after 1 week of tamoxifen i got horrible hand pain.,Symptoms are possibly bad: symptoms mentioned but no verb found,pain,tamoxifen
+i realized that the pain started after taking tomoxifen and i stopped taking it.,Symptoms are possibly bad: symptoms mentioned but no verb found,pain,tamoxifen
+hand pain is slowly getting better but i really know it if i am late at taking the gabapentin.hoping to quit tamoxifen all together.hide full comment,Symptoms are possibly bad: symptoms mentioned but no verb found,pain,tamoxifen
+comment:i personally have found tamoxifen to affect my life in two ways - tiredness and my eyesight has been affected tremendously.,Symptoms are possibly bad: symptoms mentioned but no verb found,tired,tamoxifen
+i'm really leaving this post to help other women who have hot flashes.,Symptoms are possibly bad: symptoms mentioned but no verb found,hot flashes,tamoxifen
+slight weight loss and diarreah.,Symptoms are possibly bad: symptoms mentioned but no verb found,weight loss,tamoxifen
+"other than this issue, the side effects were lessening but some malaise persists.",Symptoms are possibly bad: symptoms mentioned but no verb found,malaise,tamoxifen
+"side effects include weight gain,hair became dry & brittle, yeast infections, leg cramps, urine odor, and night sweats/hot flashes.",Symptoms are possibly bad: symptoms mentioned but no verb found,hot flashes,tamoxifen
+"comment:severe sweats day and night, dark urine with fowl odor discharge.hide full comment",Symptoms are possibly bad: symptoms mentioned but no verb found,dark urine,tamoxifen
+"however, i am also experiencing a lot of pain in both armpits.",Symptoms are possibly bad: symptoms mentioned but no verb found,pain,tamoxifen
+i have swelling at times.,Symptoms are bad: Presence of negative verb + symptoms,swelling,tamoxifen
+is anyone else experiencing pain and swelling in the armpits?hide full comment,Symptoms are possibly bad: symptoms mentioned but no verb found,pain,tamoxifen
+"comment:i have been on this drug sense 4/08,i had stage 2 bc with no nodes, had both breast removed and had reconstruction....side effects are join pain in ankles and knees and wrists, i also have muscel pain.",Symptoms are possibly bad: symptoms mentioned but no verb found,pain,tamoxifen
+"other than some joint pain, and some hair loss, i really don't think my experience has been that difficult.",Symptoms are possibly bad: symptoms mentioned but no verb found,hair loss,tamoxifen
+"have many side effects already reported, hot flashes, weight gain, extreme vag dryness, low sex drive.",Symptoms are possibly bad: symptoms mentioned but no verb found,hot flashes,tamoxifen
+"i have had some hot flashes and insomnia,but the worst symptom has been a very bitter taste in my mouth and dryness.",Symptoms are possibly bad: symptoms mentioned but no verb found,hot flashes,tamoxifen
+"comment:i'm doing good on tamoxifen, i just get hot flashes like really bad and i don't get much sleep..hide full comment",Symptoms are ok: Presence of positive verb + symptoms,hot flashes,tamoxifen
+"the hot flashes have diminished, the night sweats are going away.",Symptoms are possibly bad: symptoms mentioned but no verb found,hot flashes,tamoxifen
+"comment:i have been on 10 mg in the morning and 10 mg at night for a year.my worst side effect has been severe joint pain.my toes hurt so bad sometimes that i cry.my legs and knees also hurt.i have gained about 40 pounds and i have a huge belly now.i have alot of vaginal discharge but have no problem with dryness.at first,the hot flashes were horrible but since i started taking effexor they are not as frequent.i am so glad that it is keeping the cancer away that i will take it regardless of the side effects.hide full comment",Symptoms are possibly bad: symptoms mentioned but no verb found,hot flashes,tamoxifen
+"comment:have lost tyoo much weight,dizziness,blurred vision,weak muscles,diearhea,hot flashes more than usual!hide full comment",Symptoms are bad: Presence of negative verb + symptoms,blurred vision,tamoxifen
+initially i had lots of hot flashes and my period stopped almost immediately(yeah!),Symptoms are possibly bad: symptoms mentioned but no verb found,hot flashes,tamoxifen
+also a very dry vagina making sex impossible due to pain.,Symptoms are bad: Presence of negative verb + symptoms,pain,tamoxifen
+"now, six months later, i wanted to ask if anyone else has experienced chronic diarrhea?",Symptoms are possibly bad: symptoms mentioned but no verb found,diarrhea,tamoxifen
+i'm 39 years old and have had heavy or irregular bleeding with discharge every month.,Symptoms are possibly bad: symptoms mentioned but no verb found,bleeding,tamoxifen
+"comment:i have real bad hot flashes, leg and joint pain sometimes are horrible.",Symptoms are possibly bad: symptoms mentioned but no verb found,hot flashes,tamoxifen
+"i get headaches...low back pain, and now have a bacterial infection and discharge.",Symptoms are possibly bad: symptoms mentioned but no verb found,back pain,tamoxifen
+"comment:other than hot flashes, it has worked for mehide full comment",Symptoms are ok: Presence of positive verb + symptoms,hot flashes,tamoxifen
+hopefully she can put me on a helathy diet that will result in weight loss.,Symptoms are possibly bad: symptoms mentioned but no verb found,weight loss,tamoxifen
+"the hot flashes seemed to have subsided, now let's see about the sex drive.",Symptoms are possibly bad: symptoms mentioned but no verb found,hot flashes,tamoxifen
+"in the 9 months that i have been taking this horrible drug, i have had the following side effects:  loss of sexual desire, vaginal dryness, vaginal discharge, hot flashes, weight gain, fatigue (no matter how much i sleep), and a feeling of being mentally foggy.",Symptoms are possibly bad: symptoms mentioned but no verb found,fatigue,tamoxifen
+once the pain starts it takes several weeks to go awayhide full comment,Symptoms are possibly bad: symptoms mentioned but no verb found,pain,tamoxifen
+"i still don't have hot flashes, night sweats, or anything like that, but my period trickled off and now i've only had 1 period in the past year.",Symptoms are ok: Presence of positive verb + symptoms,hot flashes,tamoxifen
+"uncontrollable hot flashes, horrible weight gain, pains and aches.",Symptoms are possibly bad: symptoms mentioned but no verb found,hot flashes,tamoxifen
+hot flashes were not controllable even after effexor.,Symptoms are possibly bad: symptoms mentioned but no verb found,hot flashes,tamoxifen
+had slight hot flashes for a few months but have since subsided.,Symptoms are possibly bad: symptoms mentioned but no verb found,hot flashes,tamoxifen
+pins/needles type hot flashes went away after 90 days what a relief.,Symptoms are possibly bad: symptoms mentioned but no verb found,hot flashes,tamoxifen
+"comment:i was diagnosed at age 44 with early stage breast cancer..had lumpectomy and radiation..i was on tamoxifen for 5 years 2003-2008 and went through hot flashes and some vagingal discharge, but the worst side effect for me was joint pain...mostly in my hands, but sometimes wrists, elbows and shoulders...since my last pill, i have had no significant joint pain.",Symptoms are possibly bad: symptoms mentioned but no verb found,hot flashes,tamoxifen
+"whether that is significant or not..what bothered most was that no doctors admit that joint pain is a side effect of the drug...i suppose if the cancer does not come back, it was worth the agony for the five years.",Symptoms are bad: Presence of negative verb + symptoms,joint pain,tamoxifen
+the hot flashes were uncontrollable.hide full comment,Symptoms are possibly bad: symptoms mentioned but no verb found,hot flashes,tamoxifen
+"the hot flashes are even worse despite using  vit e, black cohash, & now trying clonidine and gabapentin: mood swings and depression plus worsened (long term) insomnia.",Symptoms are possibly bad: symptoms mentioned but no verb found,hot flashes,tamoxifen
+had hot flashes and up the effexor xr to 75mg and much better.,Symptoms are possibly bad: symptoms mentioned but no verb found,hot flashes,tamoxifen
+my menstrual flows are inconsistent with heavy bleeding.,Symptoms are possibly bad: symptoms mentioned but no verb found,bleeding,tamoxifen
+i was given effexor which adds to my fatigue and too much increases nausea.,Symptoms are possibly bad: symptoms mentioned but no verb found,fatigue,tamoxifen
+the worse symptom is the extreme fatigue.,Symptoms are possibly bad: symptoms mentioned but no verb found,fatigue,tamoxifen
+i am grateful that i will soon be off tam (by the way also probably was a major contributor to extreme heavy bleeding which lead to a partial hyst.),Symptoms are ok: Presence of positive verb + symptoms,bleeding,tamoxifen
+hot flashes for first month then no side effects at all.,Symptoms are possibly bad: symptoms mentioned but no verb found,hot flashes,tamoxifen
+the hot flashes are tough and i've gained about 10 pounds but that is probably due to lack of exercise and poor eating habits.,Symptoms are ok: Presence of positive verb + symptoms,hot flashes,tamoxifen
+i have terrible back pain and nerve pain (not sure if it is attributable to tamoxifen).,Symptoms are possibly bad: symptoms mentioned but no verb found,back pain,tamoxifen
+some vaginal discharge but most of my symptoms of leg cramps and muscle pain have subsided with time.,Symptoms are possibly bad: symptoms mentioned but no verb found,muscle pain,tamoxifen
+my dr. told me hot flashes are a good thing because they mean the tamoxifen is working - that makes them bearable.,Symptoms are possibly bad: symptoms mentioned but no verb found,hot flashes,tamoxifen
+"i can't believe they can't find a ""cure"" for the hot flashes/night sweats.",Symptoms are possibly bad: symptoms mentioned but no verb found,hot flashes,tamoxifen
+comment:my biggest side effect is vaginal discharge/yeast type issues.,Symptoms are possibly bad: symptoms mentioned but no verb found,vaginal discharge,tamoxifen
+"i just want to cry.i was always an easy going,happy  person, now i am tired ,hot and cranky.",Symptoms are possibly bad: symptoms mentioned but no verb found,tired,tamoxifen
+comment:the first 60 days i experienced severe joint pain and heavy feeling in muscles-aching and mental foggines.,Symptoms are possibly bad: symptoms mentioned but no verb found,joint pain,tamoxifen
+"comment:i have been on this med for 4 plus years and will soon be changing to femara....i have lost 30 pounds by changing my eating habits and reducing stress in my life...minor hot flashes on occasion, with no prob because i already handled that when i went thru menopause.",Symptoms are bad: Presence of negative verb + symptoms,hot flashes,tamoxifen
+"leg cramps, night sweats and hot flashes keep me company while i'm not sleeping.",Symptoms are possibly bad: symptoms mentioned but no verb found,hot flashes,tamoxifen
+"i am having stiffness in my joints, very mild hot flashes and trouble sleeping.",Symptoms are possibly bad: symptoms mentioned but no verb found,hot flashes,tamoxifen
+"comment:i took the drug for 2 years.i started bleeding very bad(thank god my uterus was not cancerous)i had hot flashes so bad to where they kept me from a restful sleep,charley horses were painful and i felt i was depressed.been off the med for a year now,few mild hot flashes,no charley horses,not depressed,no bleeding ,feel better.hide full comment",Symptoms are possibly bad: symptoms mentioned but no verb found,bleeding,tamoxifen
+"comment:hate tamoxifen with a passion - severe side effects - hot flashes, mood swings, weight gain, cramps, memory loss, forgetfulness, loss of motivation.",Symptoms are possibly bad: symptoms mentioned but no verb found,hot flashes,tamoxifen
+"there has been some weight gain and major hot flashes, being treated with effexor.",Symptoms are possibly bad: symptoms mentioned but no verb found,hot flashes,tamoxifen
+have hot flashes day and night (reduced by using black cohosh).,Symptoms are ok: Presence of positive verb + symptoms,hot flashes,tamoxifen
+comment:experienced all the symptoms of meno-pause plus severe headaches.,Symptoms are possibly bad: symptoms mentioned but no verb found,headache,tamoxifen
+never had headaches prior to taking the rx.,Symptoms are possibly bad: symptoms mentioned but no verb found,headache,tamoxifen
+"vision problems, nausea, vomiting, bone pain, fatigue, headaches, dizziness, clumsy, etc.",Symptoms are bad: Presence of negative verb + symptoms,bone pain,tamoxifen
+"hot flashes (but nothing like the chemo flashes), weight gain, vaginal dryness and odor.",Symptoms are possibly bad: symptoms mentioned but no verb found,hot flashes,tamoxifen
+i have the foot and leg cramps occasionally and have just started having some joint pain.,Symptoms are possibly bad: symptoms mentioned but no verb found,joint pain,tamoxifen
+"fatigue, foot cramps, weight gain, malaise, depression, hot flashes...chose quality of life over quantity.",Symptoms are possibly bad: symptoms mentioned but no verb found,fatigue,tamoxifen
+"hot flashes, joint aches and fatigue from beginning.",Symptoms are possibly bad: symptoms mentioned but no verb found,fatigue,tamoxifen
+"dry skin, vaginal discharge and horrible ankle and foot cramps later.",Symptoms are possibly bad: symptoms mentioned but no verb found,dry skin,tamoxifen
+comment:this is my 4th years on the drug but i did not know leg cramps were a side effect and i now am having break thru bleeding in the vaginahide full comment,Symptoms are possibly bad: symptoms mentioned but no verb found,bleeding,tamoxifen
+"comment:seem to have ""charley horses"" both day and night(sometimes waking me out of a solid sleep).",Symptoms are possibly bad: symptoms mentioned but no verb found,charley horse,tamoxifen
+"i had hair lost, hot flashes all the time and i got cancer again on my 5th year while taking tamoxifen.",Symptoms are bad: Presence of negative verb + symptoms,hot flashes,tamoxifen
+"also had headaches at begining, daily.",Symptoms are possibly bad: symptoms mentioned but no verb found,headache,tamoxifen
+"i have hot flashes sporatically, but that's all.",Symptoms are possibly bad: symptoms mentioned but no verb found,hot flashes,tamoxifen
+"feb/mar to oct 2015 severe fatigue, muscle weakness.swelling of knees and ankles and feet.",Symptoms are possibly bad: symptoms mentioned but no verb found,fatigue,armimidex
+first week of oct had severe bone pain in fingers and toes.,Symptoms are possibly bad: symptoms mentioned but no verb found,bone pain,armimidex
+pain and pins and needles in all 4 extremities.,Symptoms are possibly bad: symptoms mentioned but no verb found,pain,armimidex
+severe joint pain and i could not walk or use my hands.,Symptoms are possibly bad: symptoms mentioned but no verb found,joint pain,armimidex
+"have joint pain which progressed to pain all thu body, bone scan shows widespread degenerative disease.",Symptoms are bad: Presence of negative verb + symptoms,joint pain,armimidex
+"hot flashes were the worse and as i continued on the medicine they got so bad and started being accompanied with bouts of dizziness, once when driving.",Symptoms are possibly bad: symptoms mentioned but no verb found,dizziness,armimidex
+would take pain pills on some days.,Symptoms are bad: Presence of negative verb + symptoms,pain,armimidex
+"joint pain, i take fish oil at night and q-10 in the morning.",Symptoms are possibly bad: symptoms mentioned but no verb found,joint pain,armimidex
+comment:i've only been on this drug for 6 months and i stopped it 2 weeks ago i cannot bear the joint and bone pain that it has caused.,Symptoms are possibly bad: symptoms mentioned but no verb found,bone pain,armimidex
+"comment:after being on arimidex for almost a year, i had such tremendous breast pain following lumpectomy (both breasts) and lymph node (1) removal on each side, that i was advised to go off for a month, and the pain should go away.",Symptoms are possibly bad: symptoms mentioned but no verb found,breast pain,armimidex
+"now the nervousness, dizziness, sleeplessness have emerged..",Symptoms are possibly bad: symptoms mentioned but no verb found,dizziness,armimidex
+"i doubt i even needed to be on this horrible drug, which caused the following side effects: very stiff and painful joints - especially in the hands and feet, hot flashes, dry mouth, vaginal dryness, heart irregularities (had to be put on heart med to control), tired most days, minimal hair loss.",Symptoms are bad: Presence of negative verb + symptoms,dry mouth,armimidex
+a question that i have not been to get a definitive answer to is:  are the weight gain sleeplessness temporary?hide full comment,Symptoms are possibly bad: symptoms mentioned but no verb found,sleeplessness,armimidex
+i do have slight pain in the hip area and lower left side.,Symptoms are possibly bad: symptoms mentioned but no verb found,pain,armimidex
+"i attended my doctor who said it was a kidney infection, but the pain is still there.",Symptoms are possibly bad: symptoms mentioned but no verb found,pain,armimidex
+"i'm so sorry to hear from all of you the pain that you are in, its terrible to go on suffering after all you have gone through with the cancer itself.",Symptoms are possibly bad: symptoms mentioned but no verb found,pain,armimidex
+"comment:i have been taking arimidex for the last four years and have one more year to go (i hope)
+i have experienced hot flashes, tiredness, and thinning hair.",Symptoms are possibly bad: symptoms mentioned but no verb found,hot flashes,armimidex
+"i have been on this for over a year, i talked to the cancer doctor about all the pain, he said we will see where you are in 5 yrs.",Symptoms are possibly bad: symptoms mentioned but no verb found,pain,armimidex
+i don't know how much longer i can take this pain 24/7.....hide full comment,Symptoms are possibly bad: symptoms mentioned but no verb found,pain,armimidex
+"i was started on arimidex 2 months before i finished my chemotherapy so did not realize for a while that the fatigue, continued hair loss, nausea, sleep problems and joint pain were because of the arimidex.",Symptoms are possibly bad: symptoms mentioned but no verb found,fatigue,armimidex
+a few weeks ago i experienced shortness of breath and chest pains.,Symptoms are possibly bad: symptoms mentioned but no verb found,chest pain,armimidex
+the armidex has caused my already painful resistance unbearable !!!,Symptoms are possibly bad: symptoms mentioned but no verb found,pain,armimidex
+"also, i do not act like myself and the irritability causes me not to even want to be around myself.",Symptoms are ok: Presence of positive verb + symptoms,irritability,armimidex
+having a active family with a beautiful six year old daughter the fatigue and depression is debilitating .,Symptoms are bad: Presence of negative verb + symptoms,fatigue,armimidex
+"in this short period of time i have suffered waves of nausea, exhaustion, overall body pain that just cannot be alleviated with pain meds, sleeplessness and hot flashes that could smelt iron ore.",Symptoms are bad: Presence of negative verb + symptoms,hot flashes,armimidex
+the doctor wants me to take effexor for the hot flashes but i vetoed that idea since i've not read anything positive about attempting to get off of that drug.,Symptoms are possibly bad: symptoms mentioned but no verb found,hot flashes,armimidex
+"oncologist put me on femera, but the aches and pain were worse.",Symptoms are possibly bad: symptoms mentioned but no verb found,pain,armimidex
+"now i have 6 trigger fingers, constant shoulder and elbow pain.",Symptoms are possibly bad: symptoms mentioned but no verb found,pain,armimidex
+the swelling in my hands and knees have been unbearable.,Symptoms are possibly bad: symptoms mentioned but no verb found,swelling,armimidex
+no more effexor of hot flashes either.,Symptoms are possibly bad: symptoms mentioned but no verb found,hot flashes,armimidex
+mussel pains.,Symptoms are possibly bad: symptoms mentioned but no verb found,pain,armimidex
+"comment:started generic anastrozole may 2013; achy joints, weakness in hips; general itchiness; depression.",Symptoms are possibly bad: symptoms mentioned but no verb found,weakness,armimidex
+developed itchy watery eyes in april of 2013 which has gotten worse.,Symptoms are possibly bad: symptoms mentioned but no verb found,watery eyes,armimidex
+"the side effects have been night sweats, dry skin, and inability to sleep.",Symptoms are possibly bad: symptoms mentioned but no verb found,dry skin,armimidex
+"comment:after 13  months on arimidex i have taken a ""drug holiday"" to see if the joint pain, aches, stiffness, fatigue, sleeeplessness, depression and general poor quality of life will improve.",Symptoms are possibly bad: symptoms mentioned but no verb found,fatigue,armimidex
+"while taking arimidex, i did have hot flashes, thining of bone, higher cholesterol, but all controlled.",Symptoms are ok: Presence of positive verb + symptoms,hot flashes,armimidex
+constipation and issue for me and minor bone and joint pain in the beginning not so much now.,Symptoms are possibly bad: symptoms mentioned but no verb found,constipation,armimidex
+changing to the brand name to see if it will help with the constipation issues.,Symptoms are possibly bad: symptoms mentioned but no verb found,constipation,armimidex
+"comment:tired, bone painhide full comment",Symptoms are bad: Presence of negative verb + symptoms,bone pain,armimidex
+"i have had many side effects such as dizziness, bone pain, extreme weakness in my arms, sleepless nights, general exhaustion, tingling and numbness in my toes and fingers.",Symptoms are bad: Presence of negative verb + symptoms,bone pain,armimidex
+"comment:lumpectomy & radiation 2/13 for stage 1, from beginning, lethary, very dry skin, loss of hair, nausea, dizziness along with extreme over all joint pain that greatly interferred w/sleep.",Symptoms are possibly bad: symptoms mentioned but no verb found,dizziness,armimidex
+so far 2 weeks in & more joint pain.,Symptoms are possibly bad: symptoms mentioned but no verb found,joint pain,armimidex
+i have pain throughout my body.,Symptoms are bad: Presence of negative verb + symptoms,pain,armimidex
+aches and pains and stiffness all the time.,Symptoms are bad: Presence of negative verb + symptoms,pain,armimidex
+i have stiffness in my hands and pain in my left elbow.,Symptoms are bad: Presence of negative verb + symptoms,pain,armimidex
+sometimes i can't even get up from the chair.i take 2 anacins before i go to bed in the hope that the pain doesn't wake me up during the night.,Symptoms are possibly bad: symptoms mentioned but no verb found,pain,armimidex
+"comment:joint pain,  breast is hurting, headaches, depression and always tiredhide full comment",Symptoms are bad: Presence of negative verb + symptoms,headache,armimidex
+"there is also stiffness, some pain and the general feeling of being unwell.",Symptoms are possibly bad: symptoms mentioned but no verb found,pain,armimidex
+i now have very high cholesterol and high blood pressure (both new issues) and recurrent depression and anxiety disorder.,Symptoms are possibly bad: symptoms mentioned but no verb found,anxiety,armimidex
+this includes seeing my immediate family which makes me feel even more guilty.,Symptoms are possibly bad: symptoms mentioned but no verb found,guilt,armimidex
+began taking one cancer drug but after about 8 months found that the joint pain was so bad i could not even get up from the chair.,Symptoms are possibly bad: symptoms mentioned but no verb found,joint pain,armimidex
+i was switched to a second drug and after 4 month found that the headaches were so bad i was throwing up on almost a daily basis.,Symptoms are possibly bad: symptoms mentioned but no verb found,headache,armimidex
+"my oncologist warned me that i may have joint pain like my first drug but she did not tell me about the hair loss, or blinding daily headaches or strange pains in my thumbs and it's only been 4 months.",Symptoms are bad: Presence of negative verb + symptoms,hair loss,armimidex
+i can't stand the headaches anymore.,Symptoms are possibly bad: symptoms mentioned but no verb found,headache,armimidex
+"comment:i have been taking this rx for about 2 years, and i have been having painss and aches.",Symptoms are possibly bad: symptoms mentioned but no verb found,pain,armimidex
+"i have pain in my right elbow, right wrist, both knees- which i had to get injections for.",Symptoms are possibly bad: symptoms mentioned but no verb found,pain,armimidex
+i am so tired all the time and my appitite comes and goes.,Symptoms are possibly bad: symptoms mentioned but no verb found,tired,armimidex
+"i just wish i could be happy with this medicine, but to be honest i have stopped taking it a few times due to the pain.",Symptoms are ok: Presence of positive verb + symptoms,pain,armimidex
+that doesn't even seem to help my pain.,Symptoms are possibly bad: symptoms mentioned but no verb found,pain,armimidex
+"i do have hot flashes, joint pain and get tired terribly easy (dr says i'm severely anemic and i will be starting an iron drip next month).",Symptoms are bad: Presence of negative verb + symptoms,hot flashes,armimidex
+"also, since i take it in the am, why do i get hot flashes at bedtime, after taking it like 12 hours later?",Symptoms are ok: Presence of positive verb + symptoms,hot flashes,armimidex
+i have experienced nausea (which has lessoned over time) and also joint pain.,Symptoms are possibly bad: symptoms mentioned but no verb found,joint pain,armimidex
+the joint pain started slowly in an elbow joint and now is in just about every joint in my body.,Symptoms are possibly bad: symptoms mentioned but no verb found,joint pain,armimidex
+"i have gained weight, but feel that has been a direct result of my feeling tired alot and not exercising like i should.",Symptoms are ok: Presence of positive verb + symptoms,tired,armimidex
+i have also read that those of us that experience joint pain are less likely to have a recurrence of the cancer after taking the arimidex.,Symptoms are possibly bad: symptoms mentioned but no verb found,joint pain,armimidex
+"extreme anxity and depression, joint pain so bad i couldn't walk, can't sleep, body aches and muscle pain real bad.",Symptoms are possibly bad: symptoms mentioned but no verb found,joint pain,armimidex
+"comment:i have been most fortunate as i am almost finished with my drug therapy, have had my first mamogram since surgery (all clear) and have had no known side effects; if the small amount of fatigue is from the medication, i can live with that until my therapy with the drug is complete; then be amazed when the fatigue disappears.",Symptoms are ok: Presence of positive verb + symptoms,fatigue,armimidex
+"comment:dizziness, blurred eyes,sleepless nights,triggehir finger, low levell depression fatgue.hide full comment",Symptoms are bad: Presence of negative verb + symptoms,dizziness,armimidex
+comment:in my fourth year with lots of severe roving bone pain and now muscle pain has started.,Symptoms are possibly bad: symptoms mentioned but no verb found,bone pain,armimidex
+"i was having pain, swelling and numbness in my hands but that stopped once i quit taking glucosamine.hide full comment",Symptoms are bad: Presence of negative verb + symptoms,pain,armimidex
+i stopped femara due to pain.,Symptoms are bad: Presence of negative verb + symptoms,pain,armimidex
+"comment:joint pain, fatigue, neuropathy, soles of hands hot and painful most of the time.",Symptoms are possibly bad: symptoms mentioned but no verb found,fatigue,armimidex
+stabbing pain in 2 to 3 toes at a time.,Symptoms are possibly bad: symptoms mentioned but no verb found,pain,armimidex
+"wrists painful, ankles and elbow bone.",Symptoms are possibly bad: symptoms mentioned but no verb found,pain,armimidex
+"1 week into arimisan joint pain, but not as bas as with arimidexhide full comment",Symptoms are possibly bad: symptoms mentioned but no verb found,joint pain,armimidex
+"depression, joint pain so severe i could not sleep.",Symptoms are possibly bad: symptoms mentioned but no verb found,joint pain,armimidex
+comment:at the beginning i felt fine....no unusual pain or complaints.,Symptoms are possibly bad: symptoms mentioned but no verb found,pain,armimidex
+"pain in my arms and legs (couldn't stand for more than 5 mins), especially knees and elbows which swelled up.",Symptoms are bad: Presence of negative verb + symptoms,pain,armimidex
+"dizziness, fatigue, weakness, headache (which went away eventually,) not sleeping, blurred vision, depression, absolutely no appetite, weight loss, hair loss, affected breast swelled up and was very painful.",Symptoms are bad: Presence of negative verb + symptoms,blurred vision,armimidex
+immediate side affects joint/bone pain especially after sitting awhile and sleeping.,Symptoms are possibly bad: symptoms mentioned but no verb found,bone pain,armimidex
+"developed trigger finger, joint pain, very dry eyes, sleep problems, hot flashes, memory issues.",Symptoms are possibly bad: symptoms mentioned but no verb found,dry eyes,armimidex
+experience most of the usual side effects but the vaginal dryness along with the painfull sex is very disappointing.,Symptoms are possibly bad: symptoms mentioned but no verb found,pain,armimidex
+"i have alot of pain in my hands and feet, and terrible hot flashs!",Symptoms are possibly bad: symptoms mentioned but no verb found,pain,armimidex
+"my lymphedema worsened, carpal tunnel worsened, night sweats were severe, depression, confusion.",Symptoms are bad: Presence of negative verb + symptoms,confusion,armimidex
+i was warned that side effects include weight gain and increased hot flashes.,Symptoms are possibly bad: symptoms mentioned but no verb found,hot flashes,armimidex
+other suspicious side effects include one severe dizzy spell and pain in my foot though i do not have other noticiable joint pain.,Symptoms are possibly bad: symptoms mentioned but no verb found,joint pain,armimidex
+i thought after being on it for a while pains would taper off or i would get used to it.,Symptoms are possibly bad: symptoms mentioned but no verb found,pain,armimidex
+"but not so - hair thinning is getting worse, getting more tired, feet and hands and legs hurt more, etc.",Symptoms are possibly bad: symptoms mentioned but no verb found,tired,armimidex
+"comment:increasing amount of bone pain (hips, knees, ankles, hands) and total lack of strength.",Symptoms are possibly bad: symptoms mentioned but no verb found,bone pain,armimidex
+joint pain remains a problem.,Symptoms are possibly bad: symptoms mentioned but no verb found,joint pain,armimidex
+"head aches pain in the right eye, when i told my dr.",Symptoms are bad: Presence of negative verb + symptoms,pain,armimidex
+"comment:they should have named it ""arimideath"" this is a horrible med and causes prolonged painful side effects.",Symptoms are possibly bad: symptoms mentioned but no verb found,pain,armimidex
+my oncologist changed me to femara but the pain in my knees and hips were worse than on the arimidex so i switched back.hide full comment,Symptoms are possibly bad: symptoms mentioned but no verb found,pain,armimidex
+as with many other ladies i have experienced joint pain in my hips and knees.,Symptoms are possibly bad: symptoms mentioned but no verb found,joint pain,armimidex
+"i also have noticed hair loss, insomnia and constipation.",Symptoms are possibly bad: symptoms mentioned but no verb found,constipation,armimidex
+"some discomforts like hot flashes, body aches, etc.",Symptoms are possibly bad: symptoms mentioned but no verb found,hot flashes,armimidex
+"comment:have been on arimidex for almost 3 years and did not have some of the problems reported by others., when pain in my arm & shoulder developed for no apparent reason i stopped taking arimidex for a little over one month.",Symptoms are possibly bad: symptoms mentioned but no verb found,pain,armimidex
+"i then went back on it a few months ago but for the past week the pain (when i move) in my lower back, left hip and knee is unbearable.",Symptoms are possibly bad: symptoms mentioned but no verb found,pain,armimidex
+"has anyone tolerated it for a long period of time, then believe the extreme pain is caused by the arimidex?",Symptoms are possibly bad: symptoms mentioned but no verb found,pain,armimidex
+"hot flashes are less than tamox, bone pain and insomnia, but i can tolerate anything to keep cancer away.hide full comment",Symptoms are bad: Presence of negative verb + symptoms,bone pain,armimidex
+"really bad joint and muscle pain, esp around hip area, bad flashes, dryness.",Symptoms are possibly bad: symptoms mentioned but no verb found,muscle pain,armimidex
+"headache, more fatigue, depression, and can hardly walk sometimes.",Symptoms are possibly bad: symptoms mentioned but no verb found,fatigue,armimidex
+"started arimidex in dec 2007, have just starting having the numbness in one hand and then my feet, hot flashes, joint pain (mainly ankle) very stiff, will get through this, glad to know that others have the numbness that was really begin to worry me.",Symptoms are bad: Presence of negative verb + symptoms,hot flashes,armimidex
+"weight gain, headaches, legs hurt and even breast pain now.",Symptoms are bad: Presence of negative verb + symptoms,breast pain,armimidex
+i take pain meds for other conditions which helps with the leg pain(bone pain).,Symptoms are possibly bad: symptoms mentioned but no verb found,bone pain,armimidex
+"comment:joint pain, ankles and back only 8 months left out of the five years.",Symptoms are possibly bad: symptoms mentioned but no verb found,joint pain,armimidex
+maybe some joint pain.,Symptoms are possibly bad: symptoms mentioned but no verb found,joint pain,armimidex
+"i did experience frozen and very painful joints after taking it for a month, i felt like an old woman, i could hardly get up from my chair.",Symptoms are bad: Presence of negative verb + symptoms,pain,armimidex
+i searched on google and i read somewhere that this drug depletes your body from vitamin d (already low in many women with breast cancer) and that vitamin d could stop the painful side effects.,Symptoms are possibly bad: symptoms mentioned but no verb found,pain,armimidex
+i am also experiencing excruciating back and joint pain.,Symptoms are bad: Presence of negative verb + symptoms,joint pain,armimidex
+"pain in feet so bad i can barely stand or walk, pain in both knees makes it difficult to walk up and down stairs, pain in both shoulders, memory so bad it frightens me.",Symptoms are possibly bad: symptoms mentioned but no verb found,pain,armimidex
+glad i found these posting which helped me understand where all this pain came from so quickly.,Symptoms are ok: Presence of positive verb + symptoms,pain,armimidex
+"doctor took me off arimidex, put me on aromisin for two weeks, no improvement of pain, then back on tamoxifen.",Symptoms are possibly bad: symptoms mentioned but no verb found,pain,armimidex
+"comment:i have been taking arimidex for a year now and have experienced only joint pain in my hands, some carpal tunnel syndrome-like symptoms and pain in knees when i sit too long and get up.",Symptoms are possibly bad: symptoms mentioned but no verb found,joint pain,armimidex
+"comment:after taking arimidex for the past 6 months, the only real complaint i have is terrible lower back pain, and some hip pain, especially in the early a.m.",Symptoms are possibly bad: symptoms mentioned but no verb found,back pain,armimidex
+"i'm not getting used to the pain at all, and don't know how i will make it for the full 5 yrs.",Symptoms are possibly bad: symptoms mentioned but no verb found,pain,armimidex
+"i couln't stand the pain in my fingers,knees and hips.",Symptoms are possibly bad: symptoms mentioned but no verb found,pain,armimidex
+"comment:joint pain, trouble sleeping,weak bones glad my time for taking this drug is almost uphide full comment",Symptoms are possibly bad: symptoms mentioned but no verb found,joint pain,armimidex
+"comment:i've experienced lots of hand pain,trigger finger in my both thumbs, my right thumb i can't even bend it any more and its very pain full.i stopped taking it after a year and  half.i also gainedwight while taking this medicine.",Symptoms are possibly bad: symptoms mentioned but no verb found,pain,armimidex
