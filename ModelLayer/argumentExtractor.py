@@ -39,11 +39,10 @@ class argumentExtractor(object):
 
 
     def checkForDrugs(self, sentence):
-        sentenceTokenised = word_tokenize(sentence.lower())
         drugs = []
 
         for drug in self.listOfDrugs:
-            if drug.lower() in sentenceTokenised:
+            if drug.lower() in sentence.lower():
                 drugs.append(drug.lower())
          
         return drugs

@@ -12,6 +12,7 @@ from DataLayer.dataBaseConnector import dataBaseConnector
 from DataLayer import additionalDataGatherer
 from ModelLayer import symptomConditionExtractor
 from ModelLayer import experienceExtractor
+from ModelLayer import supplementaryDrugExtractor
 
 def buildArgExtractorWithDataLists():
     logging.info('Starting [main]: Building data lists')
@@ -54,7 +55,7 @@ def main():
 
     for forum in forums:
         posts = forum.getPosts()
-
+        mainDrug = forum.getTreatment()
         postCount = postCount + len(posts)
         forumCount = forumCount + 1
 
@@ -106,6 +107,7 @@ def main():
                 sideEffectsLevelExtractor.checkSideEffectStatuses(sentence.lower(), argExtractor, forum.getTreatment(), dbobj)
                 symptomConditionExtractor.checkSymptomConditions(sentence.lower(), sentenceScore, symptomsFound, forum.getTreatment(), argExtractor, dbobj)
                 experienceExtractor.checkForMentionOfSentimentOnly(sentence, sentenceScore, symptomsFound, drugsFound, forum.getTreatment(), argExtractor, dbobj)
+                supplementaryDrugExtractor.findSupplementaryDrug(sentence, mainDrug, drugsFound, symptomsFound, dbobj)
 
                 # TODO: Move this ASAP. This checks to see if symptoms have worsened or not
                 if (sentenceScore != 0) and (len(nounPhrases) + len(symptomsFound) > 0):
