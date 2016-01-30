@@ -129,8 +129,9 @@ def extractConnectingVerbs(sentence, symptoms, drugs, dbobj):
 
         sentence = (sentence.replace("'","\\'"))
 
-        insertSql = "INSERT INTO ConnectingVerbs (Sentence, ConnectingVerb, Symptoms, Drugs, DrugsFirst) VALUES (%s, %s, %s, %s, %s);" % ("'"+ sentence + "'", "'"+ verb + "'", "'"+ symptom + "'", "'"+ drug + "'", "'"+ drugFirst + "'")
-        dbobj.insert(insertSql)
+        insertSql = "INSERT INTO ConnectingVerbs (Sentence, ConnectingVerb, Symptoms, Drugs, DrugsFirst) VALUES (%s, %s, %s, %s, %s);" 
+        data = (sentence, verb, symptom, drug, drugFirst)
+        dbobj.insert(insertSql, data)
 
 
 

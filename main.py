@@ -7,12 +7,13 @@ from ViewLayer import displayArguments
 from ModelLayer.argumentExtractor import argumentExtractor
 from Utilities import messageCleaner
 from ModelLayer import naturalLanguageWhiz
-from ModelLayer import sideEffectsLevelExtractor
+from ModelLayer.sideEffectsLevelExtractor import sideEffectsLevelExtractor
 from DataLayer.dataBaseConnector import dataBaseConnector
 from DataLayer import additionalDataGatherer
-from ModelLayer import symptomConditionExtractor
-from ModelLayer import experienceExtractor
-from ModelLayer import supplementaryDrugExtractor
+from ModelLayer.symptomConditionExtractor import symptomConditionExtractor
+from ModelLayer.experienceExtractor import experienceExtractor
+from ModelLayer.supplementaryDrugExtractor import supplementaryDrugExtractor
+from DataLayer import argumentInserter
 
 def buildArgExtractorWithDataLists():
     logging.info('Starting [main]: Building data lists')
@@ -46,6 +47,7 @@ def main():
     logging.info('-------------------------------------------------------')
     
     argExtractor = buildArgExtractorWithDataLists()
+
     forums = postsGatherer.gatherForums()
     dbobj = dataBaseConnector('DBConnector.ini')
     postCount = 0
@@ -97,17 +99,28 @@ def main():
                 if(len(nounPhrases) > 0):
                     for nounPhrase in nounPhrases:
                         post.setNounPhrase(nounPhrase)
-                        message = (post.getReview()).replace("'","\\'")
+                        message = post.getReview()
                         sqlSentence = sentence.replace("'","\\'")
 
-                        insertSql = "INSERT INTO ForumPostFeatures (Post, Sentence, nounPhrase) VALUES (%s, %s, %s);" % ("'"+ message + "'", "'"+ sqlSentence + "'", "'"+ nounPhrase.lower() + "'")
-                        dbobj.insert(insertSql)
+                        insertSql = "INSERT INTO ForumPostFeatures (Post, Sentence, nounPhrase) VALUES (%s, %s, %s);" 
+                        data = (message, sqlSentence, nounPhrase.lower())
+                        dbobj.insert(insertSql, data)
                 
+                # Construct argument rules newly here so that objects are fresh and can store fresh data each iteration
+                sideEffectsLevelExtractorObj = sideEffectsLevelExtractor()
+                experienceExtractorObj = experienceExtractor()
+                symptomConditionExtractorObj = symptomConditionExtractor()
+                supplementaryDrugExtractorObj = supplementaryDrugExtractor()
+
+                # These are all the argument set extraction rules
                 naturalLanguageWhiz.extractConnectingVerbs(sentence.lower(), symptomsFound, drugsFound, dbobj)
-                sideEffectsLevelExtractor.checkSideEffectStatuses(sentence.lower(), argExtractor, forum.getTreatment(), dbobj)
-                symptomConditionExtractor.checkSymptomConditions(sentence.lower(), sentenceScore, symptomsFound, forum.getTreatment(), argExtractor, dbobj)
-                experienceExtractor.checkForMentionOfSentimentOnly(sentence, sentenceScore, symptomsFound, drugsFound, forum.getTreatment(), argExtractor, dbobj)
-                supplementaryDrugExtractor.findSupplementaryDrug(sentence, mainDrug, drugsFound, symptomsFound, dbobj)
+                sideEffectsLevelExtractorObj.checkSideEffectStatuses(sentence.lower(), argExtractor, forum.getTreatment(), dbobj)
+                symptomConditionExtractorObj.checkSymptomConditions(sentence.lower(), sentenceScore, symptomsFound, forum.getTreatment(), argExtractor, dbobj)
+                experienceExtractorObj.checkForMentionOfSentimentOnly(sentence, sentenceScore, symptomsFound, drugsFound, forum.getTreatment(), argExtractor, dbobj)
+                supplementaryDrugExtractorObj.findSupplementaryDrug(sentence, mainDrug, drugsFound, symptomsFound, dbobj)
+
+                # Insert into the DB
+                argumentInserter.insertArgumentSetsIntoDB(post, sideEffectsLevelExtractorObj, experienceExtractorObj, symptomConditionExtractorObj, supplementaryDrugExtractorObj, dbobj)
 
                 # TODO: Move this ASAP. This checks to see if symptoms have worsened or not
                 if (sentenceScore != 0) and (len(nounPhrases) + len(symptomsFound) > 0):

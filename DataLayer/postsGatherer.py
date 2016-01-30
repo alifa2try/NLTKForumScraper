@@ -224,6 +224,9 @@ def __gatherWebMD(forumDetails):
 
         # Removing special characters here
         review = messageCleaner.removeSpecialCharacter(review)
+        review = review.replace("Comment:", "")
+        review = review.replace("Hide Full Comment", "")
+
         rating = re.findall('\d+', rating)
         if(review and rating):
             forumPost = post(review, __scaleRatings(rating[0], maxRating), url)
@@ -245,15 +248,19 @@ def __insertIntoDB(forums):
     for forum in forums:
         for post in forum.getPosts():
             message = post.getReview()
-            message = message.replace("'","\\'")
+            #message = message.replace("'","\\'")
 
             url = forum.getURL()
             url = url.replace("'","\\'")
             forumName = forum.getName()
             drug = forum.getTreatment()
+            rating = post.getRating()
 
-            insertSql = "INSERT INTO ForumPosts (ForumName, URL, Post, Drug) VALUES (%s, %s, %s, %s);" % ("'"+ forumName + "'", "'"+ url + "'", "'"+ message + "'", "'"+ drug + "'")
-            dbobj.insert(insertSql)
+            #insertSql = "INSERT INTO ForumPosts (ForumName, URL, Post, Drug, Rating) VALUES (%s, %s, %s, %s, %s);" % ("'"+ forumName + "'", "'"+ url + "'", "'"+ message + "'", "'"+ drug + "'")
+            
+            insertSql = "INSERT INTO ForumPosts (ForumName, URL, Post, Drug, Rating) VALUES (%s, %s, %s, %s, %s);" 
+            data = (forumName, url, message, drug, rating)
+            dbobj.insert(insertSql, data)
 
 
 

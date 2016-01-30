@@ -30,6 +30,13 @@ class dataBaseConnector(object):
         except Exception as e:
             print(str(e))
 
+    def insert(self, sql, data):
+        try:
+            result = self.cursor.execute(sql, data)
+        except Exception as e:
+            print(str(e))
+
+
 
 
 

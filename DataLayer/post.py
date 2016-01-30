@@ -60,6 +60,8 @@ class post(object):
         return self.nounPhrases
 
     # All the SETS go here
+    def setReview(self, review):
+        self.review = review
 
     def setSymptoms(self,symptom):
         self.symptoms.append(symptom)
