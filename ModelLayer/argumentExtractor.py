@@ -214,5 +214,7 @@ class argumentExtractor(object):
                     sentimentWords.append(word)
 
         return sentimentWords
+
+    
             
 

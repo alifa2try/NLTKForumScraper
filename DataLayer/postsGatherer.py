@@ -229,6 +229,7 @@ def __gatherWebMD(forumDetails):
 
         rating = re.findall('\d+', rating)
         if(review and rating):
+            # As mentioned, webmd provide three
             forumPost = post(review, __scaleRatings(rating[0], maxRating), url)
             posts.append(forumPost)
 
