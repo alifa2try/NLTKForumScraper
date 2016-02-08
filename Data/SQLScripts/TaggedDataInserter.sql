@@ -37,6 +37,15 @@ Drug varchar(255),
 Classified varchar(255)
 );
 
+CREATE TABLE DungTally
+(
+Post text,
+GroundedSemantics varchar(255),
+Rating varchar(255),
+Class varchar(255)
+)
+
+
 LOAD DATA LOCAL INFILE 'C://Users//Robie//Desktop//ExperiencesTagged.csv' 
 INTO TABLE experiences 
 FIELDS TERMINATED BY ',' 
@@ -106,8 +115,8 @@ GROUP BY experiences.Post;
 
 
 #=====================================================================================================================
-#==============================================Query the Views========================================================
-
+#==============================================CREATE MEGA ARGUMENT TALLY GRAPH=======================================
+CREATE VIEW OverallArgumentTally AS
 SELECT forumposts.post, 
 	IFNULL(experiencesaggr.PosExp, 0) AS PosExp, 
     IFNULL(experiencesaggr.NegExp, 0) AS NegExp, 
@@ -127,8 +136,37 @@ ON symptomconditionaggr.post = forumposts.post
 LEFT JOIN sideeffectpresentaggr
 ON sideeffectpresentaggr.post = forumposts.post
 
- 
+SET sql_mode = '';
+CREATE TABLE CompleteArgTally AS
+SELECT forumposts.post, 
+	IFNULL(experiencesaggr.PosExp, 0) AS PosExp, 
+    IFNULL(experiencesaggr.NegExp, 0) AS NegExp, 
+    IFNULL(symptomconditionaggr.SymtomsOK, 0) AS SymtomsOK, 
+    IFNULL(symptomconditionaggr.SymtomsNotOK, 0) AS SymtomsNotOK,
+    IFNULL(sideeffectpresentaggr.NoSideEffectsPresent, 0) AS NoSideEffectsPresent,
+    IFNULL(sideeffectpresentaggr.SideEffectsPresent, 0) AS SideEffectsPresent,
+    forumposts.Rating, 
+    forumposts.url, 
+    forumposts.drug
 
+FROM forumposts
+LEFT JOIN experiencesaggr
+ON experiencesaggr.post = forumposts.post
+LEFT JOIN symptomconditionaggr
+ON symptomconditionaggr.post = forumposts.post
+LEFT JOIN sideeffectpresentaggr
+ON sideeffectpresentaggr.post = forumposts.post
+
+
+ 
+#=====================================================================================================================
+#==============================================Query Stuff=======================================
+ 
+SELECT * FROM  OverallArgumentTally
+
+SELECT * FROM dungtally
+
+DELETE FROM dungtally
  
 #=====================================================================================================================
 #========================================LOAF TAGGED DATA==============================================================
